@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <View
+        android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:background="@color/gray"/>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Departamento Ciência da Computação"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Processamento de imagens"
+        android:layout_gravity="center_horizontal"
+        android:textSize="18sp"
+        android:textColor="@color/black"/>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Professor: Igor Jose Pedro"
+        android:textSize="17sp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Vaga para alunos de: Engenharia de computação"
+        android:textSize="17sp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Semestre minimo: 3 Semestre"
+        android:textSize="17sp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Salario: 800 reais"
+        android:textSize="17sp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Processamento de imagens"
+        android:textSize="17sp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Descrição: Desenvolvimento de algoritmos de processamento de watershead para auxiliar trabalho de progessores da unb em processamento de imagens"
+        android:textSize="17sp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Requisitos: HTML, Javascript, CSS, Java, Ruby On Rails"
+        android:textSize="17sp"
+        android:textColor="@color/black"/>
+
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Bolsa: R$ 800"
+            android:textColor="@color/black"
+            android:textSize="23sp"
+            android:layout_gravity="center_horizontal"/>
+
+        <ImageButton
+            android:id="@+id/ib_aplicar_para_vaga"
+            android:layout_height="120dp"
+            android:layout_width="match_parent"
+            android:src="@drawable/apply_button"
+            android:layout_marginTop="5dp"
+            android:scaleType="fitCenter"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="@color/background"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>

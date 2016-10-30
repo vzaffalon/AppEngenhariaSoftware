@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">App Engenharia de Software</string>
+    <string name="internetsensor">Verifique sua conexão com a internet</string>
+
+        <string-array name="workout_levels_array">
+            <item>Iniciante 1</item>
+            <item>Iniciante 2</item>
+            <item>Iniciante 3</item>
+            <item>Intermediario</item>
+            <item>Avançado</item>
+        </string-array>
+
+</resources>

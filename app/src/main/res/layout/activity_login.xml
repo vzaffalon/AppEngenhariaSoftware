@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:animateLayoutChanges="true">
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="195dp"
+        android:scaleType="fitCenter"
+        android:layout_marginTop="35dp"
+        android:src="@drawable/logo"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Bem Vindo"
+        android:layout_marginTop="5dp"
+        android:textSize="24sp"
+        android:textColor="@color/black"/>
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:layout_marginTop="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Matricula"
+        android:id="@+id/et_login_login"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        app:met_singleLineEllipsis="true"
+        app:met_floatingLabel="highlight"
+        android:textColorHint="@color/white"
+        app:met_baseColor="@color/gray"
+        app:met_primaryColor="@color/gray"
+        app:met_textColor="@color/black"
+        app:met_textColorHint="@color/gray"
+        app:met_underlineColor="@color/gray"
+        app:met_errorColor="@color/colorPrimary"/>
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Senha"
+        android:layout_marginLeft="20dp"
+        android:textColorHint="@color/white"
+        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:id="@+id/et_login_password"
+        app:met_singleLineEllipsis="true"
+        app:met_floatingLabel="highlight"
+        app:met_baseColor="@color/gray"
+        app:met_primaryColor="@color/gray"
+        app:met_textColor="@color/black"
+        app:met_textColorHint="@color/gray"
+        app:met_underlineColor="@color/gray"
+        app:met_errorColor="@color/colorPrimary"
+        android:inputType="textPassword"/>
+
+    <ImageButton
+        android:id="@+id/ib_login"
+        android:layout_height="120dp"
+        android:layout_width="match_parent"
+        android:src="@drawable/sig_in_button"
+        android:layout_marginTop="5dp"
+        android:scaleType="fitCenter"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@color/background"/>
+</LinearLayout>

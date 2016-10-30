@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#f44336</color>
+    <color name="colorPrimaryDark">#f44336</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="background">#F5F6F7</color>
+    <color name="white">#F5F6F7</color>
+
+    <color name="black">#212121</color>
+    <color name="gray">#bdbdbd</color>
+    <color name="text_gray">#959595</color>
+    <color name="cardlayoutbackground">#eeeeee</color>
+
+    <color name="section1">#f5f6f7</color>
+    <color name="section2">#aad9ff</color>
+    <color name="section3">#AED581</color>
+
+</resources>
