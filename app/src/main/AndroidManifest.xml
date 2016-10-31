@@ -25,6 +25,10 @@
             android:name=".controllers.SelecionarTipoActivity"
             android:label="@string/app_name">
         </activity>
+        <activity
+            android:name=".controllers.CadastroAlunoActivity"
+            android:label="@string/app_name">
+        </activity>
 
         <activity
             android:name=".controllers.SearchActivity"
