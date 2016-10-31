@@ -16,13 +16,13 @@ import java.util.List;
 /**
  * Created by zaffalon on 3/8/16.
  */
-public class ListaAlunosAdapter extends RecyclerView.Adapter<ListaAlunosAdapter.ListaAlunosViewHolder> {
+public class ListaVagasAdapter extends RecyclerView.Adapter<ListaVagasAdapter.ListaAlunosViewHolder> {
 
     private final Context context;
     private ListOnClickListener listOnClickListener;
     private List<Bolsas> bolsas;
 
-    public ListaAlunosAdapter(Context context, List<Bolsas> bolsas, ListOnClickListener listOnClickListener){
+    public ListaVagasAdapter(Context context, List<Bolsas> bolsas, ListOnClickListener listOnClickListener){
         this.context=context;
         this.bolsas = bolsas;
         this.listOnClickListener = listOnClickListener;
