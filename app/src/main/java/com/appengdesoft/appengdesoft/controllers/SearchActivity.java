@@ -112,12 +112,12 @@ public class SearchActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        ListaAlunosAdapter listaAlunosAdapter = new ListaAlunosAdapter(getApplicationContext(),bolsas,onClickList());
-        recyclerView.setAdapter(listaAlunosAdapter);
+        ListaVagasAdapter listaVagasAdapter = new ListaVagasAdapter(getApplicationContext(),bolsas,onClickList());
+        recyclerView.setAdapter(listaVagasAdapter);
     }
 
-    private ListaAlunosAdapter.ListOnClickListener onClickList(){
-        return new ListaAlunosAdapter.ListOnClickListener(){
+    private ListaVagasAdapter.ListOnClickListener onClickList(){
+        return new ListaVagasAdapter.ListOnClickListener(){
             @Override
             public void onClickList(View view, int idx) {
                 Intent intent = new Intent(getApplicationContext(), InformacoesBolsaActivity.class);
