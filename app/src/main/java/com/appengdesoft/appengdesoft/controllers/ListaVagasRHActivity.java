@@ -19,8 +19,8 @@ public class ListaVagasRHActivity extends Activity{
      ImageButton floatingButton;
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setUpButtons();
         setContentView(R.layout.vagas_rh_list_item);
+        setUpButtons();
 
     }
 
