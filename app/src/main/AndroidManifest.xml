@@ -26,6 +26,10 @@
             android:label="@string/app_name">
         </activity>
         <activity
+            android:name=".controllers.ListaVagasRHActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
             android:name=".controllers.CadastroAlunoActivity"
             android:label="@string/app_name">
         </activity>
