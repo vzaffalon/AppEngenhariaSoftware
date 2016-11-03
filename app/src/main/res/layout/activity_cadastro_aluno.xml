@@ -25,7 +25,7 @@
         android:layout_marginTop="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nome Completo"
+        android:hint="Nome"
         android:id="@+id/et_cadastro_aluno_Nome"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
@@ -113,6 +113,44 @@
         app:met_textColorHint="@color/gray"
         app:met_underlineColor="@color/gray"
         app:met_errorColor="@color/colorPrimary"/>
+
+    <TextView
+        android:text="Escolha o seu curso"
+        android:layout_width="match_parent"
+        android:gravity="clip_horizontal"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:layout_marginTop="15dp"/>
+
+    <Spinner
+        android:layout_marginTop="20dp"
+        android:id="@+id/spinner1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/curso_arrays"
+        android:prompt="@string/curso_prompt"
+        />
+
+    <TextView
+        android:text="Selecione o seu  Semestre"
+        android:layout_width="match_parent"
+        android:gravity="clip_horizontal"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5"
+        android:layout_marginTop="15dp"/>
+
+    <Spinner
+        android:layout_marginTop="20dp"
+        android:id="@+id/spinner1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/semestre_arrays"
+        android:prompt="@string/semestre_prompt"
+        />
 
     <ImageButton
         android:id="@+id/ib_cadastro_aluno"

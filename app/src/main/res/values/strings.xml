@@ -1,13 +1,85 @@
 <resources>
     <string name="app_name">App Engenharia de Software</string>
-    <string name="internetsensor">Verifique sua conexão com a internet</string>
+    <string name="curso_prompt">Escolha o seu curso</string>
 
-        <string-array name="workout_levels_array">
-            <item>Iniciante 1</item>
-            <item>Iniciante 2</item>
-            <item>Iniciante 3</item>
-            <item>Intermediario</item>
-            <item>Avançado</item>
-        </string-array>
+    <string-array name="curso_arrays">
+        <item>Administração</item>
+        <item>Agronomonia</item>
+        <item>Arquitetura e Urbanismo</item>
+        <item>Arquivologia</item>
+        <item>Artes Cênicas</item>
+        <item>Artes Plásticas</item>
+        <item>Biblioteconomia</item>
+        <item>Ciência da Computação</item>
+        <item>Ciência Política</item>
+        <item>Ciências Ambientais</item>
+        <item>Ciências Biológicas</item>
+        <item>Ciências Farmacêuticas</item>
+        <item>Ciências Sociais</item>
+        <item>Comunicação Organizacional</item>
+        <item>Comunicação Social</item>
+        <item>Desenho Industrial</item>
+        <item>Direito</item>
+        <item>Educação Física</item>
+        <item>Enfermagem e Obstetrícia</item>
+        <item>Engenharia Ambiental</item>
+        <item>Engenharia Civil</item>
+        <item>Engenharia de Computação</item>
+        <item>Engenharia de Redes de Comunição</item>
+        <item>Engenharia de Produção</item>
+        <item>Engenharia Elétrica</item>
+        <item>Engenharia Florestal</item>
+        <item>Engenharia Mecânica</item>
+        <item>Engenharia Mecatrônica</item>
+        <item>Estatística</item>
+        <item>Filosofia</item>
+        <item>Física</item>
+        <item>Geofísica</item>
+        <item>Geografia</item>
+        <item>Geologia</item>
+        <item>Gestão de Políticas Públicas</item>
+        <item>Gestão do Agronegócio</item>
+        <item>Gestão em Saúde Coletiva</item>
+        <item>História</item>
+        <item>Letras</item>
+        <item>Matemática</item>
+        <item>Medicina</item>
+        <item>Medicina Veterinária</item>
+        <item>Museologia</item>
+        <item>Música</item>
+        <item>Nutrição</item>
+        <item>Odontologia</item>
+        <item>Pedagogia</item>
+        <item>Psicologia</item>
+        <item>Química</item>
+        <item>Química Tecnológica</item>
+        <item>Relações Internacionais</item>
+        <item>Serviço Social</item>
+        <item>Turismo</item>
+    </string-array>
 
+    <string name="app_name">App Engenharia de Software</string>
+    <string name="semestre_prompt">Escolha o seu semestre</string>
+
+    <string-array name="semestre_arrays">
+        <item>1°</item>
+        <item>2°</item>
+        <item>3°</item>
+        <item>4°</item>
+        <item>5°</item>
+        <item>6°</item>
+        <item>7°</item>
+        <item>8°</item>
+        <item>9°</item>
+        <item>10°</item>
+        <item>11°</item>
+        <item>12°</item>
+        <item>13°</item>
+        <item>14°</item>
+        <item>15°</item>
+        <item>16°</item>
+        <item>17°</item>
+        <item>18°</item>
+
+    </string-array>
 </resources>
