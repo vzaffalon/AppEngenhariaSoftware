@@ -59,7 +59,7 @@ public class SelecionarTipoActivity extends AppCompatActivity {
 
         estagio_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
+                Intent intent = new Intent(getApplicationContext(),ListaVagasRHActivity.class);
                 //intent.putExtra("workoutId",workoutId);
                 startActivity(intent);
             }
