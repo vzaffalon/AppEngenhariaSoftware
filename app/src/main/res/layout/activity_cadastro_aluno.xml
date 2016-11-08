@@ -153,7 +153,7 @@
         />
 
     <ImageButton
-        android:id="@+id/ib_cadastro_aluno"
+        android:id="@+id/ib_cadastro_professor"
         android:layout_height="120dp"
         android:layout_width="match_parent"
         android:src="@drawable/sig_in_button"

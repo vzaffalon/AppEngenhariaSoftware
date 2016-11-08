@@ -58,7 +58,6 @@
         <item>Turismo</item>
     </string-array>
 
-    <string name="app_name">App Engenharia de Software</string>
     <string name="semestre_prompt">Escolha o seu semestre</string>
 
     <string-array name="semestre_arrays">
