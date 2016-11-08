@@ -1,4 +1,4 @@
-package com.appengdesoft.appengdesoft.controllers;
+package com.appengdesoft.appengdesoft.controllers.alunos;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -10,9 +10,6 @@ import android.widget.TextView;
 import com.appengdesoft.appengdesoft.R;
 import com.appengdesoft.appengdesoft.model.Vaga;
 
-import java.util.List;
-
-import io.realm.Realm;
 import io.realm.RealmList;
 
 

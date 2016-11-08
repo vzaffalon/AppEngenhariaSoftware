@@ -1,4 +1,4 @@
-package com.appengdesoft.appengdesoft.controllers;
+package com.appengdesoft.appengdesoft.controllers.cadastro;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,9 +9,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
-import android.widget.Toast;
 
 import com.appengdesoft.appengdesoft.R;
+import com.appengdesoft.appengdesoft.controllers.cadastro.CadastroAlunoActivity;
+import com.appengdesoft.appengdesoft.controllers.cadastro.CadastroEmpresaActivity;
+import com.appengdesoft.appengdesoft.controllers.cadastro.CadastroProfessorActivity;
 
 /**
  * Created by vzaffalon on 08/11/16.

@@ -1,4 +1,4 @@
-package com.appengdesoft.appengdesoft.controllers;
+package com.appengdesoft.appengdesoft.controllers.cadastro;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.appengdesoft.appengdesoft.R;
+import com.appengdesoft.appengdesoft.controllers.login.LoginActivity;
 
 /**
  * Created by BrunoReis on 30/10/2016.

@@ -1,6 +1,8 @@
-package com.appengdesoft.appengdesoft.controllers;
+package com.appengdesoft.appengdesoft.controllers.login;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,10 +12,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.appengdesoft.appengdesoft.R;
+import com.appengdesoft.appengdesoft.controllers.alunos.SelecionarTipoActivity;
+import com.appengdesoft.appengdesoft.controllers.cadastro.EscolherTipoContaActivity;
+import com.appengdesoft.appengdesoft.controllers.gerente.ListaVagasRHActivity;
+import com.appengdesoft.appengdesoft.controllers.professores.ListaVagasProfessorActivity;
 import com.appengdesoft.appengdesoft.model.Aluno;
 import com.appengdesoft.appengdesoft.model.Estagio;
 import com.appengdesoft.appengdesoft.model.Gerente;
-import com.appengdesoft.appengdesoft.model.Login;
 import com.appengdesoft.appengdesoft.model.Pibic;
 import com.appengdesoft.appengdesoft.model.Professor;
 import com.appengdesoft.appengdesoft.model.Tcc;
@@ -73,10 +78,18 @@ public class LoginActivity extends AppCompatActivity {
                 .findAll();
         if(user.size()>0){
             receiveResult(user.get(0).getTipo());
+            saveUser(email);
         }else{
             Toast.makeText(getApplicationContext(),"Usuario ou Senha Incorretos",Toast.LENGTH_SHORT).show();
         }
         realm.close();
+    }
+
+    private void saveUser(String email){
+        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("email", email);
+        editor.commit();
     }
 
     private void receiveResult(String type){

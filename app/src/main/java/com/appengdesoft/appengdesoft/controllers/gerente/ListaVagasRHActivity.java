@@ -1,4 +1,4 @@
-package com.appengdesoft.appengdesoft.controllers;
+package com.appengdesoft.appengdesoft.controllers.gerente;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,16 +12,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
-
 import com.appengdesoft.appengdesoft.R;
+import com.appengdesoft.appengdesoft.controllers.AdicionarVagaActivity;
 import com.appengdesoft.appengdesoft.model.Estagios;
-
 import java.util.ArrayList;
 
 /**
  * Created by vvieira on 03/11/2016.
  */
-public class ListaVagasProfessorActivity extends AppCompatActivity{
+public class ListaVagasRHActivity extends AppCompatActivity{
 
     private ImageButton floatingButton;
     private ArrayList<Estagios> estagios;
@@ -34,45 +33,46 @@ public class ListaVagasProfessorActivity extends AppCompatActivity{
         setUpButtons();
         setUpRecyclerView();
         setUpToolbar();
-    }
 
-    //metodo que configura a RecyclerView
-    private void setUpRecyclerView() {
-        Estagios estagio = new Estagios();
-        estagio.setName("Vaga Tcc Desenvolver Aplicativo");
-        estagios.add(estagio);
-        estagio.setName("Vaga Pibic Desenvolver Backend");
-        estagios.add(estagio);
-        estagio.setName("Vaga Tcc Data mining");
-        estagios.add(estagio);
-        estagio.setName("Vaga Pibic Montagem de Circuitos");
-        estagios.add(estagio);
-
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        recyclerView.setHasFixedSize(true);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
-        ListaVagasProfessorAdapter listaVagasProfessorAdapter = new ListaVagasProfessorAdapter(getApplicationContext(),estagios,onClickList());
-        recyclerView.setAdapter(listaVagasProfessorAdapter);
     }
 
     @Override
     public void onResume(){
         super.onResume();
         Estagios estagio = new Estagios();
-        estagio.setName("Vaga Bolsa Inteligencia Artificial");
+        estagio.setName("Vaga desenvolvedor Senior");
         estagios.add(estagio);
     }
 
-    private void setUpButtons(){
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent =new Intent(getApplicationContext(),AdicionarVagaActivity.class);
-                startActivity(intent);
-            }
-        });
+    //metodo que configura a RecyclerView
+    private void setUpRecyclerView() {
+        Estagios estagio = new Estagios();
+        estagio.setName("Vaga desenvolvedor Python");
+        estagios.add(estagio);
+        estagio.setName("Vaga desenvolvedor Java");
+        estagios.add(estagio);
+        estagio.setName("Vaga desenvolvedor Javascript");
+        estagios.add(estagio);
+        estagio.setName("Vaga desenvolvedor Android");
+        estagios.add(estagio);
+
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView.setHasFixedSize(true);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        ListaVagasRHAdapter listaVagasRHAdapter = new ListaVagasRHAdapter(getApplicationContext(),estagios,onClickList());
+        recyclerView.setAdapter(listaVagasRHAdapter);
     }
+
+        private void setUpButtons(){
+            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+            fab.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    Intent intent =new Intent(getApplicationContext(),AdicionarVagaActivity.class);
+                    startActivity(intent);
+                }
+            });
+        }
 
     private ListaVagasRHAdapter.ListOnClickListener onClickList(){
         return new ListaVagasRHAdapter.ListOnClickListener(){
@@ -82,6 +82,14 @@ public class ListaVagasProfessorActivity extends AppCompatActivity{
             }
         };
     }
+
+//metodo que vai mandar essa tela pra tela de adicionar nova vaga, caso seja clicado o ImageButtom OU
+// enviar para a tela da descricao da vaga
+
+//    private void receiveResult(){
+//        Intent intent = new Intent(getApplicationContext(),SelecionarTipoActivity.class);
+//        startActivity(intent);
+//    }
 
     @Override
     public void onBackPressed()
@@ -110,7 +118,7 @@ public class ListaVagasProfessorActivity extends AppCompatActivity{
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setTitle("Lista de Vagas do Professor");
+        toolbar.setTitle("Lista de Vagas Rh");
     }
 
 

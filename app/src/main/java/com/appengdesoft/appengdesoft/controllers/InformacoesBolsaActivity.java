@@ -11,10 +11,10 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.appengdesoft.appengdesoft.R;
+import com.appengdesoft.appengdesoft.controllers.alunos.AplicarParaVagaActivity;
 import com.appengdesoft.appengdesoft.model.Vaga;
 
 import io.realm.Realm;
-import io.realm.RealmObject;
 import io.realm.RealmResults;
 
 /**

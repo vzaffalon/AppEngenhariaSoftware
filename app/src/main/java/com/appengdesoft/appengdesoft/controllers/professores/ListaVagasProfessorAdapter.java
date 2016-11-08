@@ -1,5 +1,6 @@
-package com.appengdesoft.appengdesoft.controllers;
+package com.appengdesoft.appengdesoft.controllers.professores;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,23 +8,21 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.appengdesoft.appengdesoft.R;
-
+import com.appengdesoft.appengdesoft.controllers.gerente.ListaVagasRHAdapter;
 import com.appengdesoft.appengdesoft.model.Estagios;
-
-import android.content.Context;
 
 import java.util.List;
 
 /**
- * Created by vvieira on 03/11/2016.
+ * Created by vzaffalon on 08/11/16.
  */
 
-public class ListaVagasRHAdapter extends RecyclerView.Adapter<ListaVagasRHAdapter.ListaEstagiosViewHolder> {
+public class ListaVagasProfessorAdapter extends RecyclerView.Adapter<ListaVagasRHAdapter.ListaEstagiosViewHolder> {
     private final Context context;
-    private ListOnClickListener listOnClickListener;
+    private ListaVagasRHAdapter.ListOnClickListener listOnClickListener;
     private List<Estagios> estagios;
 
-    public ListaVagasRHAdapter(Context context, List<Estagios> estagios, ListOnClickListener listOnClickListener){
+    public ListaVagasProfessorAdapter(Context context, List<Estagios> estagios, ListaVagasRHAdapter.ListOnClickListener listOnClickListener){
         this.context=context;
         this.estagios = estagios;
         this.listOnClickListener = listOnClickListener;
@@ -38,14 +37,14 @@ public class ListaVagasRHAdapter extends RecyclerView.Adapter<ListaVagasRHAdapte
     }
 
     @Override
-    public ListaEstagiosViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+    public ListaVagasRHAdapter.ListaEstagiosViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.vagas_rh_list_item,viewGroup,false);
-        ListaEstagiosViewHolder holder = new ListaEstagiosViewHolder(view);
+        ListaVagasRHAdapter.ListaEstagiosViewHolder holder = new ListaVagasRHAdapter.ListaEstagiosViewHolder(view);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(final ListaEstagiosViewHolder holder, final int position) {
+    public void onBindViewHolder(final ListaVagasRHAdapter.ListaEstagiosViewHolder holder, final int position) {
 
         holder.textView_titulo.setText(estagios.get(position).getName());
 
@@ -73,3 +72,4 @@ public class ListaVagasRHAdapter extends RecyclerView.Adapter<ListaVagasRHAdapte
     }
 
 }
+

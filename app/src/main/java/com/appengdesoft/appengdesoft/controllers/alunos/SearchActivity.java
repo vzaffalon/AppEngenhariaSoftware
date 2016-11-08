@@ -1,4 +1,4 @@
-package com.appengdesoft.appengdesoft.controllers;
+package com.appengdesoft.appengdesoft.controllers.alunos;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,13 +10,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.appengdesoft.appengdesoft.R;
-import com.appengdesoft.appengdesoft.model.User;
+import com.appengdesoft.appengdesoft.controllers.InformacoesBolsaActivity;
 import com.appengdesoft.appengdesoft.model.Vaga;
-
-import java.util.ArrayList;
 
 import io.realm.Realm;
 import io.realm.RealmList;

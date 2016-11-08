@@ -1,6 +1,8 @@
-package com.appengdesoft.appengdesoft.controllers;
+package com.appengdesoft.appengdesoft.controllers.alunos;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -11,10 +13,12 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.appengdesoft.appengdesoft.R;
+import com.appengdesoft.appengdesoft.model.User;
 import com.appengdesoft.appengdesoft.model.Vaga;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
 import io.realm.Realm;
+import io.realm.RealmList;
 import io.realm.RealmResults;
 
 /**
@@ -94,8 +98,11 @@ public class AplicarParaVagaActivity extends AppCompatActivity {
             RealmResults<Vaga> bolsa = realm.where(Vaga.class)
                     .equalTo("area",area)
                     .findAll();
-            //bolsa.get(0).setUser();
-
+            RealmList<User> users_vaga = bolsa.get(0).getUser();
+            RealmResults<User> users_list = realm.where(User.class)
+                    .equalTo("email",getUserEmail())
+                    .findAll();
+            users_vaga.add(users_list.get(0));
             realm.commitTransaction();
             realm.close();
 
@@ -104,4 +111,10 @@ public class AplicarParaVagaActivity extends AppCompatActivity {
         }
 
     }
+
+    private String getUserEmail(){
+        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+        return sharedPref.getString("email","");
+    }
+
 }
