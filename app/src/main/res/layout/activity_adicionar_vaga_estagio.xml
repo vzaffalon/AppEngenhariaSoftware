@@ -74,8 +74,8 @@
             android:layout_marginTop="25dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Habilidades"
-            android:id="@+id/et_habilidades"
+            android:hint="Requisitos"
+            android:id="@+id/et_requisitos"
             android:layout_marginEnd="20dp"
             android:layout_marginStart="20dp"
             app:met_singleLineEllipsis="true"
@@ -92,8 +92,8 @@
             android:layout_marginTop="25dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Contato"
-            android:id="@+id/et_contanto"
+            android:hint="Valor do salário"
+            android:id="@+id/et_Salario"
             android:layout_marginEnd="20dp"
             android:layout_marginStart="20dp"
             app:met_singleLineEllipsis="true"
@@ -105,6 +105,7 @@
             app:met_textColorHint="@color/gray"
             app:met_underlineColor="@color/gray"
             app:met_errorColor="@color/colorPrimary"/>
+
 
         <ImageButton
             android:id="@+id/ib_criar_nova_vaga"
