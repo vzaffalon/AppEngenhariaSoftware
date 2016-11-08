@@ -77,8 +77,8 @@ public class LoginActivity extends AppCompatActivity {
                 .equalTo("email", email)
                 .findAll();
         if(user.size()>0){
-            receiveResult(user.get(0).getTipo());
             saveUser(email);
+            receiveResult(user.get(0).getTipo());
         }else{
             Toast.makeText(getApplicationContext(),"Usuario ou Senha Incorretos",Toast.LENGTH_SHORT).show();
         }
@@ -86,8 +86,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void saveUser(String email){
-        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences("MyPrefs", android.content.Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor =      preferences.edit();
         editor.putString("email", email);
         editor.commit();
     }

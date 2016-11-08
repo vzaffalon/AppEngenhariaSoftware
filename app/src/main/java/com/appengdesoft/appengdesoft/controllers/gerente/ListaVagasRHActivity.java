@@ -1,6 +1,7 @@
 package com.appengdesoft.appengdesoft.controllers.gerente;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -15,7 +16,13 @@ import android.widget.Toast;
 import com.appengdesoft.appengdesoft.R;
 import com.appengdesoft.appengdesoft.controllers.AdicionarVagaActivity;
 import com.appengdesoft.appengdesoft.model.Estagios;
+import com.appengdesoft.appengdesoft.model.User;
+import com.appengdesoft.appengdesoft.model.Vaga;
+
 import java.util.ArrayList;
+
+import io.realm.Realm;
+import io.realm.RealmResults;
 
 /**
  * Created by vvieira on 03/11/2016.
@@ -23,13 +30,13 @@ import java.util.ArrayList;
 public class ListaVagasRHActivity extends AppCompatActivity{
 
     private ImageButton floatingButton;
-    private ArrayList<Estagios> estagios;
+    private ArrayList<Vaga> vagas;
     private RecyclerView recyclerView;
 
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_rh_vaga);
-        estagios = new ArrayList<>();
+        vagas = new ArrayList<>();
         setUpButtons();
         setUpRecyclerView();
         setUpToolbar();
@@ -39,28 +46,25 @@ public class ListaVagasRHActivity extends AppCompatActivity{
     @Override
     public void onResume(){
         super.onResume();
-        Estagios estagio = new Estagios();
-        estagio.setName("Vaga desenvolvedor Senior");
-        estagios.add(estagio);
     }
 
     //metodo que configura a RecyclerView
     private void setUpRecyclerView() {
-        Estagios estagio = new Estagios();
-        estagio.setName("Vaga desenvolvedor Python");
-        estagios.add(estagio);
-        estagio.setName("Vaga desenvolvedor Java");
-        estagios.add(estagio);
-        estagio.setName("Vaga desenvolvedor Javascript");
-        estagios.add(estagio);
-        estagio.setName("Vaga desenvolvedor Android");
-        estagios.add(estagio);
+        Realm realm = Realm.getDefaultInstance();
+        realm.beginTransaction();
+        RealmResults<User> users = realm.where(User.class)
+                .equalTo("email",getUserEmail())
+                .findAll();
+        User user = users.get(0);
+        vagas.addAll(user.getProfessor().getVagas().subList(0, user.getProfessor().getVagas().size()));
+        realm.commitTransaction();
+        realm.close();
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        ListaVagasRHAdapter listaVagasRHAdapter = new ListaVagasRHAdapter(getApplicationContext(),estagios,onClickList());
+        ListaVagasRHAdapter listaVagasRHAdapter = new ListaVagasRHAdapter(getApplicationContext(),vagas,onClickList());
         recyclerView.setAdapter(listaVagasRHAdapter);
     }
 
@@ -121,5 +125,9 @@ public class ListaVagasRHActivity extends AppCompatActivity{
         toolbar.setTitle("Lista de Vagas Rh");
     }
 
+    private String getUserEmail(){
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences("MyPrefs", android.content.Context.MODE_PRIVATE);
+        return preferences.getString("email","");
+    }
 
 }

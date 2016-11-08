@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.appengdesoft.appengdesoft.R;
 
 import com.appengdesoft.appengdesoft.model.Estagios;
+import com.appengdesoft.appengdesoft.model.Vaga;
 
 import android.content.Context;
 
@@ -21,18 +22,18 @@ import java.util.List;
 public class ListaVagasRHAdapter extends RecyclerView.Adapter<ListaVagasRHAdapter.ListaEstagiosViewHolder> {
     private final Context context;
     private ListOnClickListener listOnClickListener;
-    private List<Estagios> estagios;
+    private List<Vaga> vagas;
 
-    public ListaVagasRHAdapter(Context context, List<Estagios> estagios, ListOnClickListener listOnClickListener){
+    public ListaVagasRHAdapter(Context context, List<Vaga> vagas, ListOnClickListener listOnClickListener){
         this.context=context;
-        this.estagios = estagios;
+        this.vagas = vagas;
         this.listOnClickListener = listOnClickListener;
     }
 
     @Override
     public int getItemCount() {
-        if(this.estagios != null){
-            return estagios.size();
+        if(this.vagas != null){
+            return vagas.size();
         }
         return 0;
     }
@@ -47,7 +48,7 @@ public class ListaVagasRHAdapter extends RecyclerView.Adapter<ListaVagasRHAdapte
     @Override
     public void onBindViewHolder(final ListaEstagiosViewHolder holder, final int position) {
 
-        holder.textView_titulo.setText(estagios.get(position).getName());
+        holder.textView_titulo.setText(vagas.get(position).getArea());
 
         if(listOnClickListener != null){
             holder.itemView.setOnClickListener(new View.OnClickListener() {

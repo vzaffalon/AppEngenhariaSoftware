@@ -113,8 +113,8 @@ public class AplicarParaVagaActivity extends AppCompatActivity {
     }
 
     private String getUserEmail(){
-        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
-        return sharedPref.getString("email","");
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences("MyPrefs", android.content.Context.MODE_PRIVATE);
+        return preferences.getString("email","");
     }
 
 }
