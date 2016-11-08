@@ -59,8 +59,8 @@ public class SelecionarTipoActivity extends AppCompatActivity {
 
         estagio_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),ListaVagasRHActivity.class);
-                //intent.putExtra("workoutId",workoutId);
+                Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
+                intent.putExtra("tipo","estagio");
                 startActivity(intent);
             }
         });
@@ -68,7 +68,7 @@ public class SelecionarTipoActivity extends AppCompatActivity {
         pibic_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
-                //intent.putExtra("workoutId",workoutId);
+                intent.putExtra("tipo","pibic");
                 startActivity(intent);
             }
         });
@@ -76,7 +76,7 @@ public class SelecionarTipoActivity extends AppCompatActivity {
         tcc_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
-                //intent.putExtra("workoutId",workoutId);
+                intent.putExtra("tipo","tcc");
                 startActivity(intent);
             }
         });

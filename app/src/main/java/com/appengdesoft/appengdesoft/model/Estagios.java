@@ -1,17 +1,18 @@
 package com.appengdesoft.appengdesoft.model;
 
 /**
- * Created by vvieira on 03/11/2016.
+ * Created by vzaffalon on 08/11/16.
  */
 
 public class Estagios {
 
-    private String nome;
+    private String name;
+
     public String getName() {
-        return nome;
-    }
-    public void setName(String name) {
-        this.nome = nome;
+        return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 }

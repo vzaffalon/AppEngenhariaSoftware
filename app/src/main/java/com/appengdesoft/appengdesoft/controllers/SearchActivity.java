@@ -10,11 +10,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.appengdesoft.appengdesoft.R;
-import com.appengdesoft.appengdesoft.model.Bolsas;
+import com.appengdesoft.appengdesoft.model.User;
+import com.appengdesoft.appengdesoft.model.Vaga;
 
 import java.util.ArrayList;
+
+import io.realm.Realm;
+import io.realm.RealmList;
+import io.realm.RealmResults;
 
 /**
  * Created by vzaffalon on 30/10/16.
@@ -23,15 +29,18 @@ import java.util.ArrayList;
 public class SearchActivity extends AppCompatActivity {
 
     private SearchView searchView;
-    private ArrayList<Bolsas> bolsas;
+    private RealmList<Vaga> bolsas;
     private RecyclerView recyclerView;
+    private String type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_vagas);
-        bolsas = new ArrayList<>();
+        bolsas = new RealmList<>();
+        type = getIntent().getExtras().getString("tipo");
         setUpToolbar();
+        getVagasData();
         setUpRecyclerView();
     }
 
@@ -68,7 +77,8 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void searchUsers(String query){
-
+        getVagasDataSearch(query);
+        setUpRecyclerView();
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -89,31 +99,31 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void setUpRecyclerView(){
-
-        Bolsas bolsa = new Bolsas();
-        bolsa.setName("Redes Neurais Artificiais");
-        bolsas.add(bolsa);
-        bolsa.setName("Redes Neurais Artificiais");
-        bolsas.add(bolsa);
-        bolsa.setName("Redes Neurais Artificiais");
-        bolsas.add(bolsa);
-        bolsa.setName("Redes Neurais Artificiais");
-        bolsas.add(bolsa);
-        bolsa.setName("Redes Neurais Artificiais");
-        bolsas.add(bolsa);
-        bolsa.setName("Redes Neurais Artificiais");
-        bolsas.add(bolsa);
-        bolsa.setName("Redes Neurais Artificiais");
-        bolsas.add(bolsa);
-
-
-
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         ListaVagasAdapter listaVagasAdapter = new ListaVagasAdapter(getApplicationContext(),bolsas,onClickList());
         recyclerView.setAdapter(listaVagasAdapter);
+    }
+
+    private void getVagasDataSearch(String search){
+        Realm realm = Realm.getDefaultInstance();
+        RealmResults<Vaga> bolsa = realm.where(Vaga.class)
+                .equalTo("tipo", type)
+                .equalTo("cursos",search)
+                .findAll();
+        bolsas.clear();
+        bolsas.addAll(bolsa.subList(0, bolsa.size()));
+    }
+
+    private void getVagasData(){
+        Realm realm = Realm.getDefaultInstance();
+        RealmResults<Vaga> bolsa = realm.where(Vaga.class)
+                .equalTo("tipo", type)
+                .findAll();
+        bolsas.clear();
+        bolsas.addAll(bolsa.subList(0, bolsa.size()));
     }
 
     private ListaVagasAdapter.ListOnClickListener onClickList(){
