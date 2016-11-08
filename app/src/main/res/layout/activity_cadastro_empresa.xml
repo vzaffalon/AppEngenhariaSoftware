@@ -11,6 +11,8 @@
         android:weightSum="1"
         android:background="@color/background">
 
+        <include layout="@layout/include_toolbar"/>
+
         <TextView
             android:text="Cadastro de Recursos Humanos"
             android:layout_width="match_parent"

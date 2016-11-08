@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:gravity="center_horizontal">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Selecione o Tipo de Conta:"
+        android:textColor="@color/black"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:textSize="22sp"/>
+
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <RadioButton android:id="@+id/radio_professor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Professor"
+            android:textColor="@color/black"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/radio_empresa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Empresa"
+            android:textColor="@color/black"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/radio_aluno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aluno"
+            android:textColor="@color/black"
+            android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/button_criar_conta"
+        android:layout_height="wrap_content"
+        android:layout_width="180dp"
+        android:text="Criar Conta"
+        android:textColor="@color/white"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorAccent"/>
+
+</LinearLayout>

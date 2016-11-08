@@ -61,6 +61,15 @@
         app:met_errorColor="@color/colorPrimary"
         android:inputType="textPassword"/>
 
+    <TextView
+        android:id="@+id/ib_nova_conta"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="110dp"
+        android:text="Criar Nova Conta"
+        android:textColor="@color/black"
+        />
+
     <ImageButton
         android:id="@+id/ib_login"
         android:layout_height="120dp"

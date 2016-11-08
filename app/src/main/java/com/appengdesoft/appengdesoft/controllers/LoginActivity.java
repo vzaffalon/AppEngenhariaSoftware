@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.appengdesoft.appengdesoft.R;
@@ -49,6 +50,13 @@ public class LoginActivity extends AppCompatActivity {
         imageButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 login(et_login.getText().toString(),et_password.getText().toString());
+            }
+        });
+        TextView novaContaButton = (TextView) findViewById(R.id.ib_nova_conta);
+        novaContaButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),EscolherTipoContaActivity.class);
+                startActivity(intent);
             }
         });
     }
