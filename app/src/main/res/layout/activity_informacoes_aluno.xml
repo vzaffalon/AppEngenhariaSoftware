@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <include layout="@layout/include_toolbar"/>
+
+    <View
+        android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:background="@color/gray"/>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="EmpresaX"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Desenvolvedor Python"
+        android:layout_gravity="center_horizontal"
+        android:textSize="18sp"
+        android:textColor="@color/black"/>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Candidato: Victor dos Anjos"
+            android:textSize="17sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Curso: Engenharia de computação"
+            android:textSize="17sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Semestre: 7 Semestre"
+            android:textSize="17sp"
+            android:textColor="@color/black"/>
+
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Habilidades: Ja fiz um site em python. Sei Python e Django, alem de outras APIs. Aprendo fácil"
+            android:textSize="17sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Contato: anjosv@gmail.com"
+            android:textSize="17sp"
+            android:textColor="@color/black"/>
+
+
+        <ImageButton
+            android:id="@+id/ib_aceitar_candidato"
+            android:layout_height="70dp"
+            android:layout_width="match_parent"
+            android:src="@drawable/aceitarcandidato"
+            android:layout_marginTop="5dp"
+            android:scaleType="fitCenter"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="@color/background"/>
+
+        <ImageButton
+            android:id="@+id/ib_negar_candidato"
+            android:layout_height="70dp"
+            android:layout_width="match_parent"
+            android:src="@drawable/negarcandidato"
+            android:layout_marginTop="5dp"
+            android:scaleType="fitCenter"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="@color/background"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
