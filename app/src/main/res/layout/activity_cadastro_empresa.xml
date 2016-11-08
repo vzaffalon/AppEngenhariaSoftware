@@ -13,6 +13,11 @@
 
         <include layout="@layout/include_toolbar"/>
 
+        <View
+            android:layout_height="1dp"
+            android:layout_width="match_parent"
+            android:background="@color/gray"/>
+
         <TextView
             android:text="Cadastro de Recursos Humanos"
             android:layout_width="match_parent"

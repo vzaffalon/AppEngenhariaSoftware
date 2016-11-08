@@ -73,6 +73,15 @@ public class SearchActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        searchView.setOnCloseListener(new SearchView.OnCloseListener() {
+            @Override
+            public boolean onClose() {
+                getVagasData();
+                setUpRecyclerView();
+                return false;
+            }
+        });
         return true;
     }
 

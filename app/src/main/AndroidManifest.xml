@@ -33,6 +33,27 @@
             android:name=".controllers.CadastroAlunoActivity"
             android:label="@string/app_name">
         </activity>
+        <activity
+            android:name=".controllers.CadastroProfessorActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".controllers.CadastroEmpresaActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".controllers.EscolherTipoContaActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name=".controllers.ListaVagasProfessorActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".controllers.AdicionarVagaActivity"
+            android:label="@string/app_name">
+        </activity>
 
         <activity
             android:name=".controllers.SearchActivity"

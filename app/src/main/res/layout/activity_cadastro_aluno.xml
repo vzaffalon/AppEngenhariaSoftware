@@ -13,6 +13,11 @@
 
     <include layout="@layout/include_toolbar"/>
 
+    <View
+        android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:background="@color/gray"/>
+
     <TextView
         android:text="Cadastro de Aluno"
         android:layout_width="match_parent"
@@ -155,7 +160,7 @@
         />
 
     <ImageButton
-        android:id="@+id/ib_cadastro_professor"
+        android:id="@+id/ib_cadastro_aluno"
         android:layout_height="120dp"
         android:layout_width="match_parent"
         android:src="@drawable/sig_in_button"

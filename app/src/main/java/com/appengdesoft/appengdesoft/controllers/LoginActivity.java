@@ -89,7 +89,8 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
         }
         if(type.equals("Professor")){
-
+            Intent intent = new Intent(getApplicationContext(),ListaVagasProfessorActivity.class);
+            startActivity(intent);
         }
     }
 
@@ -106,19 +107,69 @@ public class LoginActivity extends AppCompatActivity {
 
         Realm realm = Realm.getDefaultInstance();
         realm.beginTransaction();
-        Estagio estagio = new Estagio("R$ 800","Auxiliar Desenvolvimento de plataformas web utilizando o framework AngularJS" +
+        Estagio estagio = new Estagio("R$ 950","Auxiliar Desenvolvimento de plataformas web utilizando o framework AngularJS" +
                 "e BackEnd em Ruby On Rails");
         Vaga vaga = new Vaga("30/10/16","Estagio Desenvolvimento Web","Engenharias",
                 "Minimo de 6 Semestre","estagio",null,null,estagio);
         realm.copyToRealm(vaga);
 
-        Pibic pibic = new Pibic("R$ 800","Análise psicologica de crianças");
+        estagio = new Estagio("R$ 950","Auxiliar Desenvolvimento de plataformas web utilizando o framework AngularJS" +
+                "e BackEnd em Ruby On Rails");
+        vaga = new Vaga("30/10/16","Estagio Desenvolvimento Web","Engenharias 2",
+                "Minimo de 6 Semestre","estagio",null,null,estagio);
+        realm.copyToRealm(vaga);
+
+        estagio = new Estagio("R$ 950","Auxiliar Desenvolvimento de plataformas web utilizando o framework AngularJS" +
+                "e BackEnd em Ruby On Rails");
+        vaga = new Vaga("30/10/16","Estagio Desenvolvimento Web","Engenharias 3",
+                "Minimo de 6 Semestre","estagio",null,null,estagio);
+        realm.copyToRealm(vaga);
+
+        estagio = new Estagio("R$ 950","Auxiliar Desenvolvimento de plataformas web utilizando o framework AngularJS" +
+                "e BackEnd em Ruby On Rails");
+        vaga = new Vaga("30/10/16","Estagio Desenvolvimento Web","Engenharias 4",
+                "Minimo de 6 Semestre","estagio",null,null,estagio);
+        realm.copyToRealm(vaga);
+
+
+
+        Pibic pibic = new Pibic("R$ 500","Análise psicologica de crianças");
         vaga = new Vaga("31/11/16","Psicologia Clinica","Psicologia",
+                "Minimo de 8 Semestre","pibic",null,pibic,null);
+        realm.copyToRealm(vaga);
+
+        pibic = new Pibic("R$ 500","Análise psicologica de crianças");
+        vaga = new Vaga("31/11/16","Psicologia Clinica","Psicologia 2",
+                "Minimo de 8 Semestre","pibic",null,pibic,null);
+        realm.copyToRealm(vaga);
+
+        pibic = new Pibic("R$ 500","Análise psicologica de crianças");
+        vaga = new Vaga("31/11/16","Psicologia Clinica","Psicologia 3",
+                "Minimo de 8 Semestre","pibic",null,pibic,null);
+        realm.copyToRealm(vaga);
+
+        pibic = new Pibic("R$ 500","Análise psicologica de crianças");
+        vaga = new Vaga("31/11/16","Psicologia Clinica","Psicologia 4",
                 "Minimo de 8 Semestre","pibic",null,pibic,null);
         realm.copyToRealm(vaga);
 
         Tcc tcc = new Tcc("Desenvolvimento de aplicativo para auxiliar busca de informações sobre rochas");
         vaga = new Vaga("31/11/16","Desenvolvimento de aplicativos","Ciencia da Computação",
+                "Minimo de 8 Semestre","tcc",tcc,null,null);
+        realm.copyToRealm(vaga);
+
+        tcc = new Tcc("Desenvolvimento de aplicativo para auxiliar busca de informações sobre rochas");
+        vaga = new Vaga("31/11/16","Desenvolvimento de aplicativos","Ciencia da Computação 2",
+                "Minimo de 8 Semestre","tcc",tcc,null,null);
+        realm.copyToRealm(vaga);
+
+        tcc = new Tcc("Desenvolvimento de aplicativo para auxiliar busca de informações sobre rochas");
+        vaga = new Vaga("31/11/16","Desenvolvimento de aplicativos","Ciencia da Computação 3",
+                "Minimo de 8 Semestre","tcc",tcc,null,null);
+        realm.copyToRealm(vaga);
+
+        tcc = new Tcc("Desenvolvimento de aplicativo para auxiliar busca de informações sobre rochas");
+        vaga = new Vaga("31/11/16","Desenvolvimento de aplicativos","Ciencia da Computação 4",
                 "Minimo de 8 Semestre","tcc",tcc,null,null);
         realm.copyToRealm(vaga);
 
@@ -131,20 +182,20 @@ public class LoginActivity extends AppCompatActivity {
         Realm realm = Realm.getDefaultInstance();
         realm.beginTransaction();
         Aluno aluno = new Aluno("Semestre 6","Engenharia de Computação","14012676");
-        User user = new User("Bruno","José","brunojose@gmail.com","123456","Aluno",aluno,null,null);
+        User user = new User("Bruno","José","aluno@gmail.com","123456","Aluno",aluno,null,null);
         realm.copyToRealm(user);
         realm.commitTransaction();
 
         realm.beginTransaction();
         Gerente gerente = new Gerente("House Mobile");
-        user = new User("José","Pedro","josepedro@gmail.com","123456","Gerente",null,gerente,null);
+        user = new User("José","Pedro","gerente@gmail.com","123456","Gerente",null,gerente,null);
         realm.copyToRealm(user);
         realm.commitTransaction();
 
         realm.beginTransaction();
         Professor professor = new Professor("Universidade de Brasilia","Redes Neurais Artificiais",
                 "Ciencia da Computação","27080831023");
-        user = new User("Bruno","José","brunojose@gmail.com","123456","Aluno",null,null,professor);
+        user = new User("Bruno","José","professor@gmail.com","123456","Professor",null,null,professor);
         realm.copyToRealm(user);
         realm.commitTransaction();
 

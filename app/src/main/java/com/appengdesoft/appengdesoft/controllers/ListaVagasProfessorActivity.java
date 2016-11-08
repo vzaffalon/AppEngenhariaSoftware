@@ -1,6 +1,5 @@
 package com.appengdesoft.appengdesoft.controllers;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -13,14 +12,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
 import com.appengdesoft.appengdesoft.R;
 import com.appengdesoft.appengdesoft.model.Estagios;
+
 import java.util.ArrayList;
 
 /**
  * Created by vvieira on 03/11/2016.
  */
-public class ListaVagasRHActivity extends AppCompatActivity{
+public class ListaVagasProfessorActivity extends AppCompatActivity{
 
     private ImageButton floatingButton;
     private ArrayList<Estagios> estagios;
@@ -33,40 +34,39 @@ public class ListaVagasRHActivity extends AppCompatActivity{
         setUpButtons();
         setUpRecyclerView();
         setUpToolbar();
-
     }
 
     //metodo que configura a RecyclerView
     private void setUpRecyclerView() {
         Estagios estagio = new Estagios();
-        estagio.setName("Vaga desenvolvedor Python");
+        estagio.setName("Vaga Tcc Desenvolver Aplicativo");
         estagios.add(estagio);
-        estagio.setName("Vaga desenvolvedor Python");
+        estagio.setName("Vaga Pibic Desenvolver Backend");
         estagios.add(estagio);
-        estagio.setName("Vaga desenvolvedor Python");
+        estagio.setName("Vaga Tcc Data mining");
         estagios.add(estagio);
-        estagio.setName("Vaga desenvolvedor Python");
+        estagio.setName("Vaga Pibic Montagem de Circuitos");
         estagios.add(estagio);
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        ListaVagasRHAdapter listaVagasRHAdapter = new ListaVagasRHAdapter(getApplicationContext(),estagios,onClickList());
-        recyclerView.setAdapter(listaVagasRHAdapter);
+        ListaVagasProfessorAdapter listaVagasProfessorAdapter = new ListaVagasProfessorAdapter(getApplicationContext(),estagios,onClickList());
+        recyclerView.setAdapter(listaVagasProfessorAdapter);
     }
 
-        private void setUpButtons(){
-            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-            fab.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    Toast.makeText(getApplicationContext(),"Cadastro Enviado",Toast.LENGTH_SHORT).show();
+    private void setUpButtons(){
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"Cadastro Enviado",Toast.LENGTH_SHORT).show();
 
-                    Intent intent =new Intent(getApplicationContext(),AdicionarVagaActivity.class);
-                    startActivity(intent);
-                }
-            });
-        }
+                Intent intent =new Intent(getApplicationContext(),AdicionarVagaActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
 
     private ListaVagasRHAdapter.ListOnClickListener onClickList(){
         return new ListaVagasRHAdapter.ListOnClickListener(){
@@ -77,14 +77,6 @@ public class ListaVagasRHActivity extends AppCompatActivity{
             }
         };
     }
-
-//metodo que vai mandar essa tela pra tela de adicionar nova vaga, caso seja clicado o ImageButtom OU
-// enviar para a tela da descricao da vaga
-
-//    private void receiveResult(){
-//        Intent intent = new Intent(getApplicationContext(),SelecionarTipoActivity.class);
-//        startActivity(intent);
-//    }
 
     @Override
     public void onBackPressed()
@@ -113,7 +105,7 @@ public class ListaVagasRHActivity extends AppCompatActivity{
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setTitle("Lista de Vagas Rh");
+        toolbar.setTitle("Lista de Vagas do Professor");
     }
 
 
