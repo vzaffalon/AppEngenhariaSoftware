@@ -36,16 +36,24 @@ public class ListaVagasRHActivity extends AppCompatActivity{
 
     }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        Estagios estagio = new Estagios();
+        estagio.setName("Vaga desenvolvedor Senior");
+        estagios.add(estagio);
+    }
+
     //metodo que configura a RecyclerView
     private void setUpRecyclerView() {
         Estagios estagio = new Estagios();
         estagio.setName("Vaga desenvolvedor Python");
         estagios.add(estagio);
-        estagio.setName("Vaga desenvolvedor Python");
+        estagio.setName("Vaga desenvolvedor Java");
         estagios.add(estagio);
-        estagio.setName("Vaga desenvolvedor Python");
+        estagio.setName("Vaga desenvolvedor Javascript");
         estagios.add(estagio);
-        estagio.setName("Vaga desenvolvedor Python");
+        estagio.setName("Vaga desenvolvedor Android");
         estagios.add(estagio);
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
@@ -60,8 +68,6 @@ public class ListaVagasRHActivity extends AppCompatActivity{
             FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
             fab.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    Toast.makeText(getApplicationContext(),"Cadastro Enviado",Toast.LENGTH_SHORT).show();
-
                     Intent intent =new Intent(getApplicationContext(),AdicionarVagaActivity.class);
                     startActivity(intent);
                 }
@@ -72,8 +78,7 @@ public class ListaVagasRHActivity extends AppCompatActivity{
         return new ListaVagasRHAdapter.ListOnClickListener(){
             @Override
             public void onClickList(View view, int idx) {
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(intent);
+                Toast.makeText(getApplicationContext(),"Mostrar Lista de Alunos que Aplicaram",Toast.LENGTH_SHORT).show();
             }
         };
     }

@@ -56,12 +56,18 @@ public class ListaVagasProfessorActivity extends AppCompatActivity{
         recyclerView.setAdapter(listaVagasProfessorAdapter);
     }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        Estagios estagio = new Estagios();
+        estagio.setName("Vaga Bolsa Inteligencia Artificial");
+        estagios.add(estagio);
+    }
+
     private void setUpButtons(){
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Cadastro Enviado",Toast.LENGTH_SHORT).show();
-
                 Intent intent =new Intent(getApplicationContext(),AdicionarVagaActivity.class);
                 startActivity(intent);
             }
@@ -72,8 +78,7 @@ public class ListaVagasProfessorActivity extends AppCompatActivity{
         return new ListaVagasRHAdapter.ListOnClickListener(){
             @Override
             public void onClickList(View view, int idx) {
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(intent);
+                Toast.makeText(getApplicationContext(),"Mostrar Lista de Alunos que Aplicaram",Toast.LENGTH_SHORT).show();
             }
         };
     }

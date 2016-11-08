@@ -115,62 +115,63 @@ public class LoginActivity extends AppCompatActivity {
 
         estagio = new Estagio("R$ 950","Auxiliar Desenvolvimento de plataformas web utilizando o framework AngularJS" +
                 "e BackEnd em Ruby On Rails");
-        vaga = new Vaga("30/10/16","Estagio Desenvolvimento Web","Engenharias 2",
+        vaga = new Vaga("30/10/16","Estagio Desenvolvimento Web","Engenharia Mecanica",
                 "Minimo de 6 Semestre","estagio",null,null,estagio);
         realm.copyToRealm(vaga);
 
         estagio = new Estagio("R$ 950","Auxiliar Desenvolvimento de plataformas web utilizando o framework AngularJS" +
                 "e BackEnd em Ruby On Rails");
-        vaga = new Vaga("30/10/16","Estagio Desenvolvimento Web","Engenharias 3",
+        vaga = new Vaga("30/10/16","Estagio Desenvolvimento Web","Engenharia de Soft",
                 "Minimo de 6 Semestre","estagio",null,null,estagio);
         realm.copyToRealm(vaga);
 
         estagio = new Estagio("R$ 950","Auxiliar Desenvolvimento de plataformas web utilizando o framework AngularJS" +
                 "e BackEnd em Ruby On Rails");
-        vaga = new Vaga("30/10/16","Estagio Desenvolvimento Web","Engenharias 4",
+        vaga = new Vaga("30/10/16","Estagio Desenvolvimento Web","Engenharia Eletrica",
                 "Minimo de 6 Semestre","estagio",null,null,estagio);
         realm.copyToRealm(vaga);
 
 
 
-        Pibic pibic = new Pibic("R$ 500","Análise psicologica de crianças");
+        Pibic pibic = new Pibic("R$ 500","Análise psicologica de crianças e auxilio de pessoas com necessidades");
         vaga = new Vaga("31/11/16","Psicologia Clinica","Psicologia",
-                "Minimo de 8 Semestre","pibic",null,pibic,null);
+                "Minimo de 7 Semestre","pibic",null,pibic,null);
         realm.copyToRealm(vaga);
 
-        pibic = new Pibic("R$ 500","Análise psicologica de crianças");
-        vaga = new Vaga("31/11/16","Psicologia Clinica","Psicologia 2",
-                "Minimo de 8 Semestre","pibic",null,pibic,null);
+        pibic = new Pibic("R$ 650","Estudo de plantas no meio do cerrado para preencher" +
+                " catagalogo de plantas e descobrir informacoes para criação de novos remedios");
+        vaga = new Vaga("25/11/16","Biologia","Biologia",
+                "Minimo de 5 Semestre","pibic",null,pibic,null);
         realm.copyToRealm(vaga);
 
-        pibic = new Pibic("R$ 500","Análise psicologica de crianças");
-        vaga = new Vaga("31/11/16","Psicologia Clinica","Psicologia 3",
-                "Minimo de 8 Semestre","pibic",null,pibic,null);
+        pibic = new Pibic("R$ 700","Usar uma abordagem baseada no conhecimento pra identificar a influencia das tecnicas matematicas nas construções de castelos");
+        vaga = new Vaga("28/11/16","Historia","Historia",
+                "Minimo de 4 Semestre","pibic",null,pibic,null);
         realm.copyToRealm(vaga);
 
-        pibic = new Pibic("R$ 500","Análise psicologica de crianças");
-        vaga = new Vaga("31/11/16","Psicologia Clinica","Psicologia 4",
-                "Minimo de 8 Semestre","pibic",null,pibic,null);
+        pibic = new Pibic("R$ 800","Análise de series de fourier e aplicação das series na análise de circuitos eletricos com o auxilio de simuladores");
+        vaga = new Vaga("29/11/16","Matematica","Matematica",
+                "Minimo de 1 Semestre","pibic",null,pibic,null);
         realm.copyToRealm(vaga);
 
         Tcc tcc = new Tcc("Desenvolvimento de aplicativo para auxiliar busca de informações sobre rochas");
         vaga = new Vaga("31/11/16","Desenvolvimento de aplicativos","Ciencia da Computação",
-                "Minimo de 8 Semestre","tcc",tcc,null,null);
+                "Minimo de 2 Semestre","tcc",tcc,null,null);
         realm.copyToRealm(vaga);
 
-        tcc = new Tcc("Desenvolvimento de aplicativo para auxiliar busca de informações sobre rochas");
-        vaga = new Vaga("31/11/16","Desenvolvimento de aplicativos","Ciencia da Computação 2",
-                "Minimo de 8 Semestre","tcc",tcc,null,null);
+        tcc = new Tcc("Desenvolvimento de aplicativo para criar um novo metodo de leitura de imagens usando qrcode");
+        vaga = new Vaga("31/11/16","Desenvolvimento de aplicativos","Engenharia Eletrica",
+                "Minimo de 6 Semestre","tcc",tcc,null,null);
         realm.copyToRealm(vaga);
 
-        tcc = new Tcc("Desenvolvimento de aplicativo para auxiliar busca de informações sobre rochas");
-        vaga = new Vaga("31/11/16","Desenvolvimento de aplicativos","Ciencia da Computação 3",
-                "Minimo de 8 Semestre","tcc",tcc,null,null);
+        tcc = new Tcc("Desenvolvimento de site para mostrar informacoes de grafos de qualquer tipo desejado");
+        vaga = new Vaga("31/11/16","Desenvolvimento de aplicativos","Ciencia da Computação",
+                "Minimo de 4 Semestre","tcc",tcc,null,null);
         realm.copyToRealm(vaga);
 
-        tcc = new Tcc("Desenvolvimento de aplicativo para auxiliar busca de informações sobre rochas");
-        vaga = new Vaga("31/11/16","Desenvolvimento de aplicativos","Ciencia da Computação 4",
-                "Minimo de 8 Semestre","tcc",tcc,null,null);
+        tcc = new Tcc("Criação de um framework para desenvolvimento web utilizando a linguagem swift");
+        vaga = new Vaga("31/11/16","Desenvolvimento de aplicativos","Engenharia da Computação",
+                "Minimo de 3 Semestre","tcc",tcc,null,null);
         realm.copyToRealm(vaga);
 
 
