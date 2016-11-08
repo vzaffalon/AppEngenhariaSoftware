@@ -1,5 +1,6 @@
 package com.appengdesoft.appengdesoft.model;
 
+import io.realm.RealmList;
 import io.realm.RealmObject;
 
 /**
@@ -9,7 +10,15 @@ import io.realm.RealmObject;
 public class Gerente extends RealmObject {
 
     private String empresa;
+    private RealmList<Vaga> vagas;
 
+    public RealmList<Vaga> getVagas() {
+        return vagas;
+    }
+
+    public void setVagas(RealmList<Vaga> vagas) {
+        this.vagas = vagas;
+    }
 
     public Gerente(String empresa) {
         this.empresa = empresa;

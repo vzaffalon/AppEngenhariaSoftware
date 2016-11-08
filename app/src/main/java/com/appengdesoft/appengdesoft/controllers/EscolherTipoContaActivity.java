@@ -94,7 +94,7 @@ public class EscolherTipoContaActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setTitle("Informações da Vaga");
+        toolbar.setTitle("Cadastro");
     }
 
 }

@@ -22,7 +22,7 @@ import io.realm.RealmResults;
  */
 
 public class InformacoesBolsaActivity extends AppCompatActivity{
-
+    private String area;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,7 @@ public class InformacoesBolsaActivity extends AppCompatActivity{
         setUpToolbar();
         setUpButtons();
         setUpLayout();
+        area = getIntent().getExtras().getString("area");
     }
 
     @Override
@@ -68,6 +69,7 @@ public class InformacoesBolsaActivity extends AppCompatActivity{
         imageButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),AplicarParaVagaActivity.class);
+                intent.putExtra("area",area);
                 startActivity(intent);
             }
         });

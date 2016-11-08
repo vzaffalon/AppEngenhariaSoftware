@@ -2,6 +2,7 @@ package com.appengdesoft.appengdesoft.model;
 
 import java.util.ArrayList;
 
+import io.realm.RealmList;
 import io.realm.RealmObject;
 
 /**
@@ -17,6 +18,8 @@ public class Vaga extends RealmObject {
     private Tcc tcc;
     private Pibic pibic;
     private Estagio estagio;
+    private RealmList<User> users;
+
 
     public Vaga(String data, String area, String cursos, String requisitos,
                 String tipo,Tcc tcc,Pibic pibic,Estagio estagio) {
@@ -96,5 +99,13 @@ public class Vaga extends RealmObject {
 
     public void setEstagio(Estagio estagio) {
         this.estagio = estagio;
+    }
+
+    public RealmList<User> getUser() {
+        return users;
+    }
+
+    public void setUser(RealmList<User> users) {
+        this.users = users;
     }
 }

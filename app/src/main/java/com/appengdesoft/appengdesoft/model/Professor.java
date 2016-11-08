@@ -2,6 +2,7 @@ package com.appengdesoft.appengdesoft.model;
 
 import android.widget.ProgressBar;
 
+import io.realm.RealmList;
 import io.realm.RealmObject;
 
 /**
@@ -14,6 +15,7 @@ public class Professor extends RealmObject {
     private String area_de_pesquisa;
     private String departamento;
     private String matricula;
+    private RealmList<Vaga> vagas;
 
     public Professor(String universidade, String area_de_pesquisa, String departamento, String matricula) {
         this.universidade = universidade;
@@ -57,5 +59,14 @@ public class Professor extends RealmObject {
     public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
+
+    public RealmList<Vaga> getVagas() {
+        return vagas;
+    }
+
+    public void setVagas(RealmList<Vaga> vagas) {
+        this.vagas = vagas;
+    }
+
 
 }
