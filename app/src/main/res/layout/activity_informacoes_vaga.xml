@@ -12,6 +12,7 @@
         android:background="@color/gray"/>
 
     <TextView
+        android:id="@+id/tv_departamento"
         android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
@@ -21,6 +22,7 @@
         android:textColor="@color/black"/>
 
     <TextView
+        android:id="@+id/tv_area"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="Processamento de imagens"
@@ -36,6 +38,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp">
     <TextView
+        android:id="@+id/tv_professor"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="Professor: Igor Jose Pedro"
@@ -43,6 +46,7 @@
         android:textColor="@color/black"/>
 
     <TextView
+        android:id="@+id/tv_vagas_para"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="Vaga para alunos de: Engenharia de computação"
@@ -50,6 +54,7 @@
         android:textColor="@color/black"/>
 
     <TextView
+        android:id="@+id/tv_semestre"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="Semestre minimo: 3 Semestre"
@@ -57,20 +62,7 @@
         android:textColor="@color/black"/>
 
     <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="Salario: 800 reais"
-        android:textSize="17sp"
-        android:textColor="@color/black"/>
-
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="Processamento de imagens"
-        android:textSize="17sp"
-        android:textColor="@color/black"/>
-
-    <TextView
+        android:id="@+id/tv_descricao"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="Descrição: Desenvolvimento de algoritmos de processamento de watershead para auxiliar trabalho de progessores da unb em processamento de imagens"
@@ -78,6 +70,7 @@
         android:textColor="@color/black"/>
 
     <TextView
+        android:id="@+id/tv_requisistos"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:text="Requisitos: HTML, Javascript, CSS, Java, Ruby On Rails"
@@ -86,6 +79,7 @@
 
 
         <TextView
+            android:id="@+id/tv_valor_da_bolsa"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:layout_marginTop="50dp"

@@ -8,8 +8,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.appengdesoft.appengdesoft.R;
+import com.appengdesoft.appengdesoft.model.Vaga;
+
+import io.realm.Realm;
+import io.realm.RealmObject;
+import io.realm.RealmResults;
 
 /**
  * Created by vzaffalon on 30/10/16.
@@ -24,6 +30,7 @@ public class InformacoesBolsaActivity extends AppCompatActivity{
         setContentView(R.layout.activity_informacoes_vaga);
         setUpToolbar();
         setUpButtons();
+        setUpLayout();
     }
 
     @Override
@@ -64,5 +71,46 @@ public class InformacoesBolsaActivity extends AppCompatActivity{
                 startActivity(intent);
             }
         });
+    }
+
+    private Vaga getVaga(){
+        String area = getIntent().getExtras().getString("area");
+
+        Realm realm = Realm.getDefaultInstance();
+        RealmResults<Vaga> bolsa = realm.where(Vaga.class)
+                .equalTo("area", area)
+                .findAll();
+        return bolsa.get(0);
+    }
+
+    private void setUpLayout(){
+        Vaga vaga = getVaga();
+
+        TextView tv_departamento = (TextView) findViewById(R.id.tv_departamento);
+        TextView tv_area = (TextView) findViewById(R.id.tv_area);
+        TextView tv_professor = (TextView) findViewById(R.id.tv_professor);
+        TextView tv_semestre = (TextView) findViewById(R.id.tv_semestre);
+        TextView tv_vagas_para = (TextView) findViewById(R.id.tv_vagas_para);
+        TextView tv_descricao = (TextView) findViewById(R.id.tv_descricao);
+        TextView tv_requisitos= (TextView) findViewById(R.id.tv_requisistos);
+        TextView tv_valor = (TextView) findViewById(R.id.tv_valor_da_bolsa);
+
+        tv_departamento.setText("Departamento " +vaga.getCursos());
+        tv_area.setText(vaga.getArea());
+        tv_professor.setText("Professor: " + "Jose Roberto");
+        tv_requisitos.setText("Requisitos: " +vaga.getRequisitos());
+        tv_vagas_para.setText("Vagas para alunos de: " + vaga.getCursos());
+        if(vaga.getTipo().equals("pibic")){
+            tv_descricao.setText("Descrição: "+ vaga.getPibic().getAssunto());
+            tv_valor.setText("Bolsa: " + vaga.getPibic().getValor_da_bolsa());
+        }
+        if(vaga.getTipo().equals("tcc")){
+            tv_descricao.setText("Descrição: "+ vaga.getTcc().getAssunto());
+            tv_valor.setVisibility(View.GONE);
+        }
+        if(vaga.getTipo().equals("estagio")){
+            tv_descricao.setVisibility(View.GONE);
+            tv_valor.setText("Bolsa: " + vaga.getEstagio().getValor_da_bolsa());
+        }
     }
 }

@@ -9,10 +9,12 @@ import io.realm.RealmObject;
 public class Estagio extends RealmObject {
 
     private String valor_da_bolsa;
+    private String descricao;
 
 
-    public Estagio(String valor_da_bolsa) {
+    public Estagio(String valor_da_bolsa,String descricao) {
         this.valor_da_bolsa = valor_da_bolsa;
+        this.descricao = descricao;
     }
     public Estagio(){
 
@@ -23,5 +25,13 @@ public class Estagio extends RealmObject {
 
     public void setValor_da_bolsa(String valor_da_bolsa) {
         this.valor_da_bolsa = valor_da_bolsa;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 }

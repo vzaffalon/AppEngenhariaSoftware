@@ -98,8 +98,9 @@ public class LoginActivity extends AppCompatActivity {
 
         Realm realm = Realm.getDefaultInstance();
         realm.beginTransaction();
-        Estagio estagio = new Estagio("R$ 800");
-        Vaga vaga = new Vaga("30/10/16","Processamento de imagens","Engenharias",
+        Estagio estagio = new Estagio("R$ 800","Auxiliar Desenvolvimento de plataformas web utilizando o framework AngularJS" +
+                "e BackEnd em Ruby On Rails");
+        Vaga vaga = new Vaga("30/10/16","Estagio Desenvolvimento Web","Engenharias",
                 "Minimo de 6 Semestre","estagio",null,null,estagio);
         realm.copyToRealm(vaga);
 

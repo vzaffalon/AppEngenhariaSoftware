@@ -131,6 +131,7 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onClickList(View view, int idx) {
                 Intent intent = new Intent(getApplicationContext(), InformacoesBolsaActivity.class);
+                intent.putExtra("area",bolsas.get(idx).getArea());
                 startActivity(intent);
             }
         };

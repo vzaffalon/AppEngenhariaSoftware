@@ -53,7 +53,7 @@ public class ListaVagasAdapter extends RecyclerView.Adapter<ListaVagasAdapter.Li
             holder.tv_descricao.setText(bolsas.get(position).getTcc().getAssunto());
         }
         if(type.equals("estagio")){
-            holder.tv_descricao.setText(bolsas.get(position).getRequisitos());
+            holder.tv_descricao.setText(bolsas.get(position).getEstagio().getDescricao());
         }
 
         if(listOnClickListener != null){
