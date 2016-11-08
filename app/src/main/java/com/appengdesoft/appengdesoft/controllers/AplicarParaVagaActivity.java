@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.appengdesoft.appengdesoft.R;
 
@@ -59,8 +60,8 @@ public class AplicarParaVagaActivity extends AppCompatActivity {
         ImageButton imageButton = (ImageButton) findViewById(R.id.ib_aplicar_para_vaga);
         imageButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
-                startActivity(intent);
+                Toast.makeText(getApplicationContext(),"Vaga aplicada com sucesso",Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
     }

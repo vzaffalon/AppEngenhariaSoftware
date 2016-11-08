@@ -27,7 +27,7 @@
         android:layout_marginTop="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Matricula"
+        android:hint="Email"
         android:id="@+id/et_login_login"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"

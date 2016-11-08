@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_height="wrap_content"
-    android:layout_width="wrap_content">
 <LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -35,7 +33,7 @@
         app:met_errorColor="@color/colorPrimary"/>
 
     <com.rengwuxian.materialedittext.MaterialEditText
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Curso"
@@ -53,7 +51,7 @@
         app:met_errorColor="@color/colorPrimary"/>
 
     <com.rengwuxian.materialedittext.MaterialEditText
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Semestre"
@@ -71,7 +69,7 @@
         app:met_errorColor="@color/colorPrimary"/>
 
     <com.rengwuxian.materialedittext.MaterialEditText
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Habilidades"
@@ -89,7 +87,7 @@
         app:met_errorColor="@color/colorPrimary"/>
 
     <com.rengwuxian.materialedittext.MaterialEditText
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Contato"
@@ -118,4 +116,3 @@
         android:background="@color/background"/>
 
 </LinearLayout>
-</ScrollView>

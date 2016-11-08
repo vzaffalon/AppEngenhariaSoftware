@@ -95,22 +95,27 @@ public class InformacoesBolsaActivity extends AppCompatActivity{
         TextView tv_requisitos= (TextView) findViewById(R.id.tv_requisistos);
         TextView tv_valor = (TextView) findViewById(R.id.tv_valor_da_bolsa);
 
-        tv_departamento.setText("Departamento " +vaga.getCursos());
+        tv_semestre.setVisibility(View.GONE);
         tv_area.setText(vaga.getArea());
-        tv_professor.setText("Professor: " + "Jose Roberto");
         tv_requisitos.setText("Requisitos: " +vaga.getRequisitos());
         tv_vagas_para.setText("Vagas para alunos de: " + vaga.getCursos());
         if(vaga.getTipo().equals("pibic")){
             tv_descricao.setText("Descrição: "+ vaga.getPibic().getAssunto());
             tv_valor.setText("Bolsa: " + vaga.getPibic().getValor_da_bolsa());
+            tv_professor.setText("Professor: " + "Jose Roberto");
+            tv_departamento.setText("Departamento " +vaga.getCursos());
         }
         if(vaga.getTipo().equals("tcc")){
             tv_descricao.setText("Descrição: "+ vaga.getTcc().getAssunto());
             tv_valor.setVisibility(View.GONE);
+            tv_professor.setText("Orientador: " + "Assis Pereira");
+            tv_departamento.setText("Departamento " +vaga.getCursos());
         }
         if(vaga.getTipo().equals("estagio")){
-            tv_descricao.setVisibility(View.GONE);
+            tv_descricao.setText("Descrição: "+ vaga.getEstagio().getDescricao());
             tv_valor.setText("Bolsa: " + vaga.getEstagio().getValor_da_bolsa());
+            tv_professor.setText("Orientador: " + "Isabella Faraco");
+            tv_departamento.setText("Vaga Estágio");
         }
     }
 }
