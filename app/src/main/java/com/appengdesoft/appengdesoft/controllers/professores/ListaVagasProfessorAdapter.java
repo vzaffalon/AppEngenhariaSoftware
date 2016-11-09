@@ -45,7 +45,15 @@ public class ListaVagasProfessorAdapter extends RecyclerView.Adapter<ListaVagasP
     @Override
     public void onBindViewHolder(final ListaVagasProfessorAdapter.ListaVagasViewHolder holder, final int position) {
 
-        holder.textView_titulo.setText(vagas.get(position).getArea());
+        holder.tv_departamento.setText(vagas.get(position).getCursos());
+        holder.tv_data.setText(vagas.get(position).getData());
+        holder.tv_titulo.setText(vagas.get(position).getArea());
+        if(vagas.get(position).getTipo().equals("tcc")) {
+            holder.tv_descricao.setText(vagas.get(position).getTcc().getAssunto());
+        }
+        if(vagas.get(position).getTipo().equals("pibic")){
+            holder.tv_descricao.setText(vagas.get(position).getPibic().getAssunto());
+        }
 
         if(listOnClickListener != null){
             holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -58,11 +66,17 @@ public class ListaVagasProfessorAdapter extends RecyclerView.Adapter<ListaVagasP
     }
 
     public static class ListaVagasViewHolder extends RecyclerView.ViewHolder{
-        public TextView textView_titulo;
+        public TextView tv_departamento;
+        public TextView tv_data;
+        public TextView tv_titulo;
+        public TextView tv_descricao;
 
-        public ListaVagasViewHolder(View view){
+        public ListaVagasViewHolder(View view) {
             super(view);
-            textView_titulo =(TextView) view.findViewById(R.id.tv_titulo);
+            tv_departamento = (TextView) view.findViewById(R.id.tv_departamento);
+            tv_data = (TextView) view.findViewById(R.id.tv_data);
+            tv_titulo = (TextView) view.findViewById(R.id.tv_titulo);
+            tv_descricao =(TextView) view.findViewById(R.id.tv_descricao);
         }
     }
 

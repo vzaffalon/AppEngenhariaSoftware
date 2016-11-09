@@ -38,8 +38,13 @@ public class ListaVagasProfessorActivity extends AppCompatActivity{
         setContentView(R.layout.activity_lista_rh_vaga);
         vagas = new ArrayList<>();
         setUpButtons();
-        setUpRecyclerView();
         setUpToolbar();
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        setUpRecyclerView();
     }
 
     //metodo que configura a RecyclerView
@@ -54,7 +59,6 @@ public class ListaVagasProfessorActivity extends AppCompatActivity{
             vagas.addAll(user.getProfessor().getVagas().subList(0, user.getProfessor().getVagas().size()));
         }catch (Exception e){}
         realm.commitTransaction();
-        realm.close();
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
@@ -64,16 +68,12 @@ public class ListaVagasProfessorActivity extends AppCompatActivity{
         recyclerView.setAdapter(listaVagasProfessorAdapter);
     }
 
-    @Override
-    public void onResume(){
-        super.onResume();
-    }
-
     private void setUpButtons(){
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent =new Intent(getApplicationContext(),AdicionarVagaActivity.class);
+                intent.putExtra("rh",false);
                 startActivity(intent);
             }
         });

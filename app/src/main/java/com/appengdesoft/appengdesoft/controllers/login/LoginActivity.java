@@ -109,7 +109,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void setUpDatabase(){
         Realm.init(getApplicationContext());
-        deleteDatabaseData();
+        //deleteDatabaseData();
         setUpUsers();
         setUpVagas();
     }
@@ -168,12 +168,12 @@ public class LoginActivity extends AppCompatActivity {
         realm.copyToRealm(vaga);
 
         Tcc tcc = new Tcc("Desenvolvimento de aplicativo para auxiliar busca de informações sobre rochas");
-        vaga = new Vaga("31/11/16","Desenvolvimento de aplicativos","Ciencia da Computação",
+        vaga = new Vaga("25/11/16","Desenvolvimento de aplicativos","Ciencia da Computação",
                 "Minimo de 2 Semestre","tcc",tcc,null,null);
         realm.copyToRealm(vaga);
 
         tcc = new Tcc("Desenvolvimento de aplicativo para criar um novo metodo de leitura de imagens usando qrcode");
-        vaga = new Vaga("31/11/16","Desenvolvimento de aplicativos","Engenharia Eletrica",
+        vaga = new Vaga("21/11/16","Desenvolvimento de aplicativos","Engenharia Eletrica",
                 "Minimo de 6 Semestre","tcc",tcc,null,null);
         realm.copyToRealm(vaga);
 
@@ -183,7 +183,7 @@ public class LoginActivity extends AppCompatActivity {
         realm.copyToRealm(vaga);
 
         tcc = new Tcc("Criação de um framework para desenvolvimento web utilizando a linguagem swift");
-        vaga = new Vaga("31/11/16","Desenvolvimento de aplicativos","Engenharia da Computação",
+        vaga = new Vaga("28/11/16","Desenvolvimento de aplicativos","Engenharia da Computação",
                 "Minimo de 3 Semestre","tcc",tcc,null,null);
         realm.copyToRealm(vaga);
 

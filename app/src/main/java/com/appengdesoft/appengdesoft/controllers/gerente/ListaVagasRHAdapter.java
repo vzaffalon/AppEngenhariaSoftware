@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.appengdesoft.appengdesoft.R;
-
 import com.appengdesoft.appengdesoft.model.Vaga;
 
 import android.content.Context;
@@ -47,7 +46,10 @@ public class ListaVagasRHAdapter extends RecyclerView.Adapter<ListaVagasRHAdapte
     @Override
     public void onBindViewHolder(final ListaEstagiosViewHolder holder, final int position) {
 
-        holder.textView_titulo.setText(vagas.get(position).getArea());
+        holder.tv_departamento.setText(vagas.get(position).getCursos());
+        holder.tv_data.setText(vagas.get(position).getData());
+        holder.tv_titulo.setText(vagas.get(position).getArea());
+        holder.tv_descricao.setText(vagas.get(position).getEstagio().getDescricao());
 
         if(listOnClickListener != null){
             holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -60,11 +62,17 @@ public class ListaVagasRHAdapter extends RecyclerView.Adapter<ListaVagasRHAdapte
     }
 
     public static class ListaEstagiosViewHolder extends RecyclerView.ViewHolder{
-        public TextView textView_titulo;
+        public TextView tv_departamento;
+        public TextView tv_data;
+        public TextView tv_titulo;
+        public TextView tv_descricao;
 
-        public ListaEstagiosViewHolder(View view){
+        public ListaEstagiosViewHolder(View view) {
             super(view);
-            textView_titulo =(TextView) view.findViewById(R.id.tv_titulo);
+            tv_departamento = (TextView) view.findViewById(R.id.tv_departamento);
+            tv_data = (TextView) view.findViewById(R.id.tv_data);
+            tv_titulo = (TextView) view.findViewById(R.id.tv_titulo);
+            tv_descricao =(TextView) view.findViewById(R.id.tv_descricao);
         }
     }
 
