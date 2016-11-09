@@ -56,7 +56,9 @@ public class ListaVagasRHActivity extends AppCompatActivity{
                 .equalTo("email",getUserEmail())
                 .findAll();
         User user = users.get(0);
-        vagas.addAll(user.getProfessor().getVagas().subList(0, user.getProfessor().getVagas().size()));
+        try {
+            vagas.addAll(user.getProfessor().getVagas().subList(0, user.getProfessor().getVagas().size()));
+        }catch (Exception e){}
         realm.commitTransaction();
         realm.close();
 
@@ -127,7 +129,8 @@ public class ListaVagasRHActivity extends AppCompatActivity{
 
     private String getUserEmail(){
         SharedPreferences preferences = getApplicationContext().getSharedPreferences("MyPrefs", android.content.Context.MODE_PRIVATE);
-        return preferences.getString("email","");
+        String email =  preferences.getString("email","");
+        return email;
     }
 
 }

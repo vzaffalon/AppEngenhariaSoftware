@@ -53,7 +53,9 @@ public class ListaVagasProfessorActivity extends AppCompatActivity{
                 .equalTo("email",getUserEmail())
                 .findAll();
         User user = users.get(0);
-        vagas.addAll(user.getProfessor().getVagas().subList(0, user.getProfessor().getVagas().size()));
+        try{
+            vagas.addAll(user.getProfessor().getVagas().subList(0, user.getProfessor().getVagas().size()));
+        }catch (Exception e){}
         realm.commitTransaction();
         realm.close();
 
