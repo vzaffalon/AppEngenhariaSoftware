@@ -17,7 +17,7 @@ import java.util.List;
  * Created by vvieira on 03/11/2016.
  */
 
-public class ListaVagasRHAdapter extends RecyclerView.Adapter<ListaVagasRHAdapter.ListaEstagiosViewHolder> {
+public class ListaVagasRHAdapter extends RecyclerView.Adapter<ListaVagasRHAdapter.ViewHolder> {
     private final Context context;
     private ListOnClickListener listOnClickListener;
     private List<Vaga> vagas;
@@ -30,23 +30,20 @@ public class ListaVagasRHAdapter extends RecyclerView.Adapter<ListaVagasRHAdapte
 
     @Override
     public int getItemCount() {
-        if(this.vagas != null){
-            return vagas.size();
-        }
-        return 0;
+        return this.vagas != null ? this.vagas.size() : 0;
     }
 
     @Override
-    public ListaEstagiosViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.vagas_rh_list_item,viewGroup,false);
-        ListaEstagiosViewHolder holder = new ListaEstagiosViewHolder(view);
+        ViewHolder holder = new ViewHolder(view);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(final ListaEstagiosViewHolder holder, final int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
 
-        holder.tv_departamento.setText(vagas.get(position).getCursos());
+        holder.tv_empresa.setText(vagas.get(position).getCursos());
         holder.tv_data.setText(vagas.get(position).getData());
         holder.tv_titulo.setText(vagas.get(position).getArea());
         holder.tv_descricao.setText(vagas.get(position).getEstagio().getDescricao());
@@ -61,15 +58,15 @@ public class ListaVagasRHAdapter extends RecyclerView.Adapter<ListaVagasRHAdapte
         }
     }
 
-    public static class ListaEstagiosViewHolder extends RecyclerView.ViewHolder{
-        public TextView tv_departamento;
+    public static class ViewHolder extends RecyclerView.ViewHolder{
+        public TextView tv_empresa;
         public TextView tv_data;
         public TextView tv_titulo;
         public TextView tv_descricao;
 
-        public ListaEstagiosViewHolder(View view) {
+        public ViewHolder(View view) {
             super(view);
-            tv_departamento = (TextView) view.findViewById(R.id.tv_departamento);
+            tv_empresa = (TextView) view.findViewById(R.id.tv_empresa);
             tv_data = (TextView) view.findViewById(R.id.tv_data);
             tv_titulo = (TextView) view.findViewById(R.id.tv_titulo);
             tv_descricao =(TextView) view.findViewById(R.id.tv_descricao);

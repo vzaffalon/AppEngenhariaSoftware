@@ -53,7 +53,7 @@ public class ListaAlunosActivity extends AppCompatActivity{
                 .findAll();
         User user = users.get(0);
         try {
-            alunos.addAll(user.getProfessor().getVagas().subList(0, user.getProfessor().getVagas().size()));
+            //alunos.addAll(user.getProfessor().getVagas().subList(0, user.getProfessor().getVagas().get.size()));
         }catch (Exception e){}
         realm.commitTransaction();
         realm.close();

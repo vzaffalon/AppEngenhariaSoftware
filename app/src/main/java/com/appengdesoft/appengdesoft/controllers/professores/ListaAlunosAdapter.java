@@ -47,7 +47,7 @@ public class ListaAlunosAdapter extends RecyclerView.Adapter<ListaAlunosAdapter.
     @Override
     public void onBindViewHolder(final ListaAlunosViewHolder holder, final int position) {
 
-        holder.textView_titulo.setText(alunos.get(position).getArea());
+        holder.textView_titulo.setText(alunos.get(position).getMatricula());
 
         if(listOnClickListener != null){
             holder.itemView.setOnClickListener(new View.OnClickListener() {

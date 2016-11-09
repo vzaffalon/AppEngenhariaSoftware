@@ -19,6 +19,7 @@ import com.appengdesoft.appengdesoft.model.User;
 import com.appengdesoft.appengdesoft.model.Vaga;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -29,7 +30,7 @@ import io.realm.RealmResults;
 public class ListaVagasRHActivity extends AppCompatActivity{
 
     private ImageButton floatingButton;
-    private ArrayList<Vaga> vagas;
+    private List<Vaga> vagas;
     private RecyclerView recyclerView;
 
     public void onCreate(Bundle savedInstanceState){
@@ -72,7 +73,7 @@ public class ListaVagasRHActivity extends AppCompatActivity{
             FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
             fab.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    Intent intent =new Intent(getApplicationContext(),AdicionarVagaActivity.class);
+                    Intent intent = new Intent(getApplicationContext(),AdicionarVagaActivity.class);
                     intent.putExtra("rh",true);
                     startActivity(intent);
                 }
@@ -87,14 +88,6 @@ public class ListaVagasRHActivity extends AppCompatActivity{
             }
         };
     }
-
-//metodo que vai mandar essa tela pra tela de adicionar nova vaga, caso seja clicado o ImageButtom OU
-// enviar para a tela da descricao da vaga
-
-//    private void receiveResult(){
-//        Intent intent = new Intent(getApplicationContext(),SelecionarTipoActivity.class);
-//        startActivity(intent);
-//    }
 
     @Override
     public void onBackPressed()

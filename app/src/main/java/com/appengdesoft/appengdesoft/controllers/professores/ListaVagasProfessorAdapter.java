@@ -73,7 +73,7 @@ public class ListaVagasProfessorAdapter extends RecyclerView.Adapter<ListaVagasP
 
         public ListaVagasViewHolder(View view) {
             super(view);
-            tv_departamento = (TextView) view.findViewById(R.id.tv_departamento);
+            tv_departamento = (TextView) view.findViewById(R.id.tv_empresa);
             tv_data = (TextView) view.findViewById(R.id.tv_data);
             tv_titulo = (TextView) view.findViewById(R.id.tv_titulo);
             tv_descricao =(TextView) view.findViewById(R.id.tv_descricao);
