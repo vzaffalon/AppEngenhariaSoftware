@@ -16,6 +16,28 @@
             android:layout_width="match_parent"
             android:background="@color/gray"/>
 
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/radio_group"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+            <RadioButton android:id="@+id/radio_pibic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pibic"
+                android:textColor="@color/black"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton android:id="@+id/radio_tcc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tcc"
+                android:textColor="@color/black"
+                android:onClick="onRadioButtonClicked"/>
+        </RadioGroup>
+
+
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_marginTop="8dp"
             android:layout_width="match_parent"
@@ -35,7 +57,7 @@
             app:met_errorColor="@color/colorPrimary"/>
 
         <com.rengwuxian.materialedittext.MaterialEditText
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Cursos"
@@ -53,25 +75,7 @@
             app:met_errorColor="@color/colorPrimary"/>
 
         <com.rengwuxian.materialedittext.MaterialEditText
-            android:layout_marginTop="25dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Semestre"
-            android:id="@+id/et_semestre"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp"
-            app:met_singleLineEllipsis="true"
-            app:met_floatingLabel="highlight"
-            android:textColorHint="@color/white"
-            app:met_baseColor="@color/gray"
-            app:met_primaryColor="@color/gray"
-            app:met_textColor="@color/black"
-            app:met_textColorHint="@color/gray"
-            app:met_underlineColor="@color/gray"
-            app:met_errorColor="@color/colorPrimary"/>
-
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Requisitos"
@@ -89,11 +93,29 @@
             app:met_errorColor="@color/colorPrimary"/>
 
         <com.rengwuxian.materialedittext.MaterialEditText
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Valor do salário"
             android:id="@+id/et_Salario"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            app:met_singleLineEllipsis="true"
+            app:met_floatingLabel="highlight"
+            android:textColorHint="@color/white"
+            app:met_baseColor="@color/gray"
+            app:met_primaryColor="@color/gray"
+            app:met_textColor="@color/black"
+            app:met_textColorHint="@color/gray"
+            app:met_underlineColor="@color/gray"
+            app:met_errorColor="@color/colorPrimary"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Descricao"
+            android:id="@+id/et_descricao"
             android:layout_marginEnd="20dp"
             android:layout_marginStart="20dp"
             app:met_singleLineEllipsis="true"

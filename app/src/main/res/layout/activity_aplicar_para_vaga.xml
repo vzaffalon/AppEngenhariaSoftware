@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    >
+<LinearLayout
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -104,6 +108,7 @@
         app:met_underlineColor="@color/gray"
         app:met_errorColor="@color/colorPrimary"/>
 
+
     <ImageButton
         android:id="@+id/ib_aplicar_para_vaga"
         android:layout_height="120dp"
@@ -116,3 +121,4 @@
         android:background="@color/background"/>
 
 </LinearLayout>
+</ScrollView>

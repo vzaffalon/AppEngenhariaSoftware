@@ -15,7 +15,6 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 import com.appengdesoft.appengdesoft.R;
 import com.appengdesoft.appengdesoft.controllers.AdicionarVagaActivity;
-import com.appengdesoft.appengdesoft.model.Estagios;
 import com.appengdesoft.appengdesoft.model.User;
 import com.appengdesoft.appengdesoft.model.Vaga;
 
@@ -38,7 +37,6 @@ public class ListaVagasRHActivity extends AppCompatActivity{
         setContentView(R.layout.activity_lista_rh_vaga);
         vagas = new ArrayList<>();
         setUpButtons();
-        setUpRecyclerView();
         setUpToolbar();
 
     }
@@ -46,6 +44,7 @@ public class ListaVagasRHActivity extends AppCompatActivity{
     @Override
     public void onResume(){
         super.onResume();
+        setUpRecyclerView();
     }
 
     //metodo que configura a RecyclerView
@@ -57,10 +56,9 @@ public class ListaVagasRHActivity extends AppCompatActivity{
                 .findAll();
         User user = users.get(0);
         try {
-            vagas.addAll(user.getProfessor().getVagas().subList(0, user.getProfessor().getVagas().size()));
+            vagas.addAll(user.getGerente().getVagas().subList(0, user.getGerente().getVagas().size()));
         }catch (Exception e){}
         realm.commitTransaction();
-        realm.close();
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
@@ -75,6 +73,7 @@ public class ListaVagasRHActivity extends AppCompatActivity{
             fab.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     Intent intent =new Intent(getApplicationContext(),AdicionarVagaActivity.class);
+                    intent.putExtra("rh",true);
                     startActivity(intent);
                 }
             });
