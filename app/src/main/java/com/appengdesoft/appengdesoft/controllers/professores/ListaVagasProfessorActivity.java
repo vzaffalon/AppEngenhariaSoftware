@@ -16,15 +16,12 @@ import android.widget.Toast;
 
 import com.appengdesoft.appengdesoft.R;
 import com.appengdesoft.appengdesoft.controllers.AdicionarVagaActivity;
-import com.appengdesoft.appengdesoft.controllers.gerente.ListaVagasRHAdapter;
-import com.appengdesoft.appengdesoft.model.Estagios;
 import com.appengdesoft.appengdesoft.model.User;
 import com.appengdesoft.appengdesoft.model.Vaga;
 
 import java.util.ArrayList;
 
 import io.realm.Realm;
-import io.realm.RealmList;
 import io.realm.RealmResults;
 
 /**

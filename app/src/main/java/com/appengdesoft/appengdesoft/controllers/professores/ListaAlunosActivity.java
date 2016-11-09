@@ -1,4 +1,4 @@
-package com.appengdesoft.appengdesoft.controllers.gerente;
+package com.appengdesoft.appengdesoft.controllers.professores;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,12 +11,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.Toast;
+
 import com.appengdesoft.appengdesoft.R;
-import com.appengdesoft.appengdesoft.controllers.AdicionarVagaActivity;
+import com.appengdesoft.appengdesoft.model.Aluno;
 import com.appengdesoft.appengdesoft.model.User;
-import com.appengdesoft.appengdesoft.model.Vaga;
 
 import java.util.ArrayList;
 
@@ -24,19 +23,17 @@ import io.realm.Realm;
 import io.realm.RealmResults;
 
 /**
- * Created by vvieira on 03/11/2016.
+ * Created by vvieira on 08/11/2016.
  */
-public class ListaVagasRHActivity extends AppCompatActivity{
 
-    private ImageButton floatingButton;
-    private ArrayList<Vaga> vagas;
+public class ListaAlunosActivity extends AppCompatActivity{
+    private ArrayList<Aluno> alunos;
     private RecyclerView recyclerView;
 
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lista_rh_vaga);
-        vagas = new ArrayList<>();
-        setUpButtons();
+        setContentView(R.layout.activity_lista_alunos_professor);
+        alunos = new ArrayList<>();
         setUpRecyclerView();
         setUpToolbar();
 
@@ -56,7 +53,7 @@ public class ListaVagasRHActivity extends AppCompatActivity{
                 .findAll();
         User user = users.get(0);
         try {
-            vagas.addAll(user.getProfessor().getVagas().subList(0, user.getProfessor().getVagas().size()));
+            alunos.addAll(user.getProfessor().getVagas().subList(0, user.getProfessor().getVagas().size()));
         }catch (Exception e){}
         realm.commitTransaction();
         realm.close();
@@ -65,36 +62,19 @@ public class ListaVagasRHActivity extends AppCompatActivity{
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        ListaVagasRHAdapter listaVagasRHAdapter = new ListaVagasRHAdapter(getApplicationContext(),vagas,onClickList());
-        recyclerView.setAdapter(listaVagasRHAdapter);
+        ListaAlunosAdapter listaAlunosAdapter = new ListaAlunosAdapter(getApplicationContext(),alunos,onClickList());
+        recyclerView.setAdapter(listaAlunosAdapter);
     }
 
-        private void setUpButtons(){
-            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-            fab.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    Intent intent =new Intent(getApplicationContext(),AdicionarVagaActivity.class);
-                    startActivity(intent);
-                }
-            });
-        }
 
-    private ListaVagasRHAdapter.ListOnClickListener onClickList(){
-        return new ListaVagasRHAdapter.ListOnClickListener(){
+    private ListaAlunosAdapter.ListOnClickListener onClickList(){
+        return new ListaAlunosAdapter.ListOnClickListener(){
             @Override
             public void onClickList(View view, int idx) {
                 Toast.makeText(getApplicationContext(),"Mostrar Lista de Alunos que Aplicaram",Toast.LENGTH_SHORT).show();
             }
         };
     }
-
-//metodo que vai mandar essa tela pra tela de adicionar nova vaga, caso seja clicado o ImageButtom OU
-// enviar para a tela da descricao da vaga
-
-//    private void receiveResult(){
-//        Intent intent = new Intent(getApplicationContext(),SelecionarTipoActivity.class);
-//        startActivity(intent);
-//    }
 
     @Override
     public void onBackPressed()
@@ -123,13 +103,12 @@ public class ListaVagasRHActivity extends AppCompatActivity{
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setTitle("Lista de Vagas Rh");
+        toolbar.setTitle("Lista de alunos que aplicaram");
     }
 
     private String getUserEmail(){
         SharedPreferences preferences = getApplicationContext().getSharedPreferences("MyPrefs", android.content.Context.MODE_PRIVATE);
-        String email =  preferences.getString("email","");
-        return email;
+        return preferences.getString("email","");
     }
 
 }
