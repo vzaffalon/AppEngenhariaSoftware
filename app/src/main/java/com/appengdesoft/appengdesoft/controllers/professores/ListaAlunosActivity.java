@@ -11,13 +11,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.appengdesoft.appengdesoft.R;
-import com.appengdesoft.appengdesoft.controllers.AdicionarVagaActivity;
+import com.appengdesoft.appengdesoft.model.Aluno;
 import com.appengdesoft.appengdesoft.model.User;
-import com.appengdesoft.appengdesoft.model.Vaga;
 
 import java.util.ArrayList;
 
@@ -25,26 +23,25 @@ import io.realm.Realm;
 import io.realm.RealmResults;
 
 /**
- * Created by vvieira on 03/11/2016.
+ * Created by vvieira on 08/11/2016.
  */
-public class ListaVagasProfessorActivity extends AppCompatActivity{
 
-    private ImageButton floatingButton;
-    private ArrayList<Vaga> vagas;
+public class ListaAlunosActivity extends AppCompatActivity{
+    private ArrayList<Aluno> alunos;
     private RecyclerView recyclerView;
 
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lista_rh_vaga);
-        vagas = new ArrayList<>();
-        setUpButtons();
+        setContentView(R.layout.activity_lista_alunos_professor);
+        alunos = new ArrayList<>();
+        setUpRecyclerView();
         setUpToolbar();
+
     }
 
     @Override
     public void onResume(){
         super.onResume();
-        setUpRecyclerView();
     }
 
     //metodo que configura a RecyclerView
@@ -55,32 +52,23 @@ public class ListaVagasProfessorActivity extends AppCompatActivity{
                 .equalTo("email",getUserEmail())
                 .findAll();
         User user = users.get(0);
-        try{
-            vagas.addAll(user.getProfessor().getVagas().subList(0, user.getProfessor().getVagas().size()));
+        try {
+            alunos.addAll(user.getProfessor().getVagas().subList(0, user.getProfessor().getVagas().size()));
         }catch (Exception e){}
         realm.commitTransaction();
+        realm.close();
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        ListaVagasProfessorAdapter listaVagasProfessorAdapter = new ListaVagasProfessorAdapter(getApplicationContext(),vagas,onClickList());
-        recyclerView.setAdapter(listaVagasProfessorAdapter);
+        ListaAlunosAdapter listaAlunosAdapter = new ListaAlunosAdapter(getApplicationContext(),alunos,onClickList());
+        recyclerView.setAdapter(listaAlunosAdapter);
     }
 
-    private void setUpButtons(){
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent =new Intent(getApplicationContext(),AdicionarVagaActivity.class);
-                intent.putExtra("rh",false);
-                startActivity(intent);
-            }
-        });
-    }
 
-    private ListaVagasProfessorAdapter.ListOnClickListener onClickList(){
-        return new ListaVagasProfessorAdapter.ListOnClickListener(){
+    private ListaAlunosAdapter.ListOnClickListener onClickList(){
+        return new ListaAlunosAdapter.ListOnClickListener(){
             @Override
             public void onClickList(View view, int idx) {
                 Toast.makeText(getApplicationContext(),"Mostrar Lista de Alunos que Aplicaram",Toast.LENGTH_SHORT).show();
@@ -115,13 +103,12 @@ public class ListaVagasProfessorActivity extends AppCompatActivity{
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setTitle("Lista de Vagas do Professor");
+        toolbar.setTitle("Lista de alunos que aplicaram");
     }
 
     private String getUserEmail(){
         SharedPreferences preferences = getApplicationContext().getSharedPreferences("MyPrefs", android.content.Context.MODE_PRIVATE);
         return preferences.getString("email","");
     }
-
 
 }

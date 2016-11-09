@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.appengdesoft.appengdesoft.R;
-import com.appengdesoft.appengdesoft.controllers.gerente.ListaVagasRHAdapter;
 import com.appengdesoft.appengdesoft.model.Vaga;
 
 import java.util.List;
