@@ -15,6 +15,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 import com.appengdesoft.appengdesoft.R;
 import com.appengdesoft.appengdesoft.controllers.AdicionarVagaActivity;
+import com.appengdesoft.appengdesoft.controllers.professores.ListaAlunosActivity;
 import com.appengdesoft.appengdesoft.model.User;
 import com.appengdesoft.appengdesoft.model.Vaga;
 
@@ -45,6 +46,7 @@ public class ListaVagasRHActivity extends AppCompatActivity{
     @Override
     public void onResume(){
         super.onResume();
+        vagas = new ArrayList<>();
         setUpRecyclerView();
     }
 
@@ -84,7 +86,9 @@ public class ListaVagasRHActivity extends AppCompatActivity{
         return new ListaVagasRHAdapter.ListOnClickListener(){
             @Override
             public void onClickList(View view, int idx) {
-                Toast.makeText(getApplicationContext(),"Mostrar Lista de Alunos que Aplicaram",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), ListaAlunosActivity.class);
+                intent.putExtra("idx",idx);
+                startActivity(intent);
             }
         };
     }

@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.appengdesoft.appengdesoft.R;
 import com.appengdesoft.appengdesoft.model.Aluno;
+import com.appengdesoft.appengdesoft.model.User;
 import com.appengdesoft.appengdesoft.model.Vaga;
 
 import java.util.List;
@@ -21,18 +22,18 @@ import java.util.List;
 public class ListaAlunosAdapter extends RecyclerView.Adapter<ListaAlunosAdapter.ListaAlunosViewHolder>{
     private final Context context;
     private ListOnClickListener listOnClickListener;
-    private List<Aluno> alunos;
+    private List<User> users;
 
-    public ListaAlunosAdapter(Context context, List<Aluno> alunos, ListOnClickListener listOnClickListener){
+    public ListaAlunosAdapter(Context context, List<User> users, ListOnClickListener listOnClickListener){
         this.context=context;
-        this.alunos = alunos;
+        this.users = users;
         this.listOnClickListener = listOnClickListener;
     }
 
     @Override
     public int getItemCount() {
-        if(this.alunos != null){
-            return alunos.size();
+        if(this.users != null){
+            return users.size();
         }
         return 0;
     }
@@ -47,7 +48,7 @@ public class ListaAlunosAdapter extends RecyclerView.Adapter<ListaAlunosAdapter.
     @Override
     public void onBindViewHolder(final ListaAlunosViewHolder holder, final int position) {
 
-        holder.textView_titulo.setText(alunos.get(position).getMatricula());
+        holder.textView_titulo.setText(users.get(position).getNome());
 
         if(listOnClickListener != null){
             holder.itemView.setOnClickListener(new View.OnClickListener() {

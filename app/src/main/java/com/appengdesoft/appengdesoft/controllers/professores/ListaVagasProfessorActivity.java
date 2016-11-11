@@ -39,12 +39,12 @@ public class ListaVagasProfessorActivity extends AppCompatActivity{
         vagas = new ArrayList<>();
         setUpButtons();
         setUpToolbar();
+        setUpRecyclerView();
     }
 
     @Override
     public void onResume(){
         super.onResume();
-        setUpRecyclerView();
     }
 
     //metodo que configura a RecyclerView
@@ -83,7 +83,9 @@ public class ListaVagasProfessorActivity extends AppCompatActivity{
         return new ListaVagasProfessorAdapter.ListOnClickListener(){
             @Override
             public void onClickList(View view, int idx) {
-                Toast.makeText(getApplicationContext(),"Mostrar Lista de Alunos que Aplicaram",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), ListaAlunosActivity.class);
+                intent.putExtra("idx",idx);
+                startActivity(intent);
             }
         };
     }

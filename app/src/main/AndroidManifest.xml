@@ -51,6 +51,18 @@
             android:label="@string/app_name">
         </activity>
         <activity
+            android:name=".controllers.professores.ListaAlunosActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".controllers.professores.InformacoesAlunoGerenteActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".controllers.professores.InformacoesAlunoProfessorActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
             android:name=".controllers.AdicionarVagaActivity"
             android:label="@string/app_name">
         </activity>

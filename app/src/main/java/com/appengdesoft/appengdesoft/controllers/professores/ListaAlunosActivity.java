@@ -27,13 +27,15 @@ import io.realm.RealmResults;
  */
 
 public class ListaAlunosActivity extends AppCompatActivity{
-    private ArrayList<Aluno> alunos;
+    private ArrayList<User> users;
     private RecyclerView recyclerView;
+    int idx;
 
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_alunos_professor);
-        alunos = new ArrayList<>();
+        users = new ArrayList<>();
+        idx = getIntent().getExtras().getInt("idx");
         setUpRecyclerView();
         setUpToolbar();
 
@@ -48,12 +50,12 @@ public class ListaAlunosActivity extends AppCompatActivity{
     private void setUpRecyclerView() {
         Realm realm = Realm.getDefaultInstance();
         realm.beginTransaction();
-        RealmResults<User> users = realm.where(User.class)
+        RealmResults<User> users_realm = realm.where(User.class)
                 .equalTo("email",getUserEmail())
                 .findAll();
-        User user = users.get(0);
+        User user = users_realm.get(0);
         try {
-            //alunos.addAll(user.getProfessor().getVagas().subList(0, user.getProfessor().getVagas().get.size()));
+            users.addAll(user.getProfessor().getVagas().get(idx).getUser().subList(0, user.getProfessor().getVagas().get(idx).getUser().size()));
         }catch (Exception e){}
         realm.commitTransaction();
         realm.close();
@@ -62,7 +64,7 @@ public class ListaAlunosActivity extends AppCompatActivity{
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        ListaAlunosAdapter listaAlunosAdapter = new ListaAlunosAdapter(getApplicationContext(),alunos,onClickList());
+        ListaAlunosAdapter listaAlunosAdapter = new ListaAlunosAdapter(getApplicationContext(),users,onClickList());
         recyclerView.setAdapter(listaAlunosAdapter);
     }
 
