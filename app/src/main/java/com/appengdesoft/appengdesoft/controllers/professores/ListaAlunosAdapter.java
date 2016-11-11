@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.appengdesoft.appengdesoft.R;
 import com.appengdesoft.appengdesoft.model.Aluno;
+import com.appengdesoft.appengdesoft.model.Aplicacao;
 import com.appengdesoft.appengdesoft.model.User;
 import com.appengdesoft.appengdesoft.model.Vaga;
 
@@ -23,10 +24,12 @@ public class ListaAlunosAdapter extends RecyclerView.Adapter<ListaAlunosAdapter.
     private final Context context;
     private ListOnClickListener listOnClickListener;
     private List<User> users;
+    private List<Aplicacao> aplicacaos;
 
-    public ListaAlunosAdapter(Context context, List<User> users, ListOnClickListener listOnClickListener){
+    public ListaAlunosAdapter(Context context, List<User> users,List<Aplicacao> aplicacaos, ListOnClickListener listOnClickListener){
         this.context=context;
         this.users = users;
+        this.aplicacaos = aplicacaos;
         this.listOnClickListener = listOnClickListener;
     }
 
@@ -49,6 +52,9 @@ public class ListaAlunosAdapter extends RecyclerView.Adapter<ListaAlunosAdapter.
     public void onBindViewHolder(final ListaAlunosViewHolder holder, final int position) {
 
         holder.textView_titulo.setText(users.get(position).getNome());
+        holder.tv_type.setText(aplicacaos.get(position).getType());
+        holder.tv_data.setText("22/10/2016");
+        holder.tv_descricao.setText(aplicacaos.get(position).getHabilidade());
 
         if(listOnClickListener != null){
             holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -62,10 +68,16 @@ public class ListaAlunosAdapter extends RecyclerView.Adapter<ListaAlunosAdapter.
 
     public static class ListaAlunosViewHolder extends RecyclerView.ViewHolder{
         public TextView textView_titulo;
+        public TextView tv_type;
+        public TextView tv_data;
+        public TextView tv_descricao;
 
         public ListaAlunosViewHolder(View view){
             super(view);
-            textView_titulo =(TextView) view.findViewById(R.id.tv_titulo);
+            textView_titulo =(TextView) view.findViewById(R.id.tv_student_name);
+            tv_type = (TextView) view.findViewById(R.id.tv_type);
+            tv_data = (TextView) view.findViewById(R.id.tv_data);
+            tv_descricao = (TextView) view.findViewById(R.id.tv_descricao);
         }
     }
 

@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.appengdesoft.appengdesoft.R;
 import com.appengdesoft.appengdesoft.model.Aluno;
+import com.appengdesoft.appengdesoft.model.Aplicacao;
 import com.appengdesoft.appengdesoft.model.User;
 
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ import io.realm.RealmResults;
 
 public class ListaAlunosActivity extends AppCompatActivity{
     private ArrayList<User> users;
+    private ArrayList<Aplicacao> aplicacoes;
     private RecyclerView recyclerView;
     int idx;
 
@@ -35,6 +37,7 @@ public class ListaAlunosActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_alunos_professor);
         users = new ArrayList<>();
+        aplicacoes = new ArrayList<>();
         idx = getIntent().getExtras().getInt("idx");
         setUpRecyclerView();
         setUpToolbar();
@@ -55,8 +58,14 @@ public class ListaAlunosActivity extends AppCompatActivity{
                 .findAll();
         User user = users_realm.get(0);
         try {
-            users.addAll(user.getProfessor().getVagas().get(idx).getUser().subList(0, user.getProfessor().getVagas().get(idx).getUser().size()));
-        }catch (Exception e){}
+            if(user.getTipo().equals("Professor")) {
+                users.addAll(user.getProfessor().getVagas().get(idx).getUser().subList(0, user.getProfessor().getVagas().get(idx).getUser().size()));
+                aplicacoes.addAll(user.getProfessor().getVagas().get(idx).getAplicacaos().subList(0, user.getProfessor().getVagas().get(idx).getAplicacaos().size()));
+            }else{
+                users.addAll(user.getGerente().getVagas().get(idx).getUser().subList(0, user.getGerente().getVagas().get(idx).getUser().size()));
+                aplicacoes.addAll(user.getGerente().getVagas().get(idx).getAplicacaos().subList(0, user.getGerente().getVagas().get(idx).getAplicacaos().size()));
+            }
+            }catch (Exception e){}
         realm.commitTransaction();
         realm.close();
 
@@ -64,7 +73,7 @@ public class ListaAlunosActivity extends AppCompatActivity{
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        ListaAlunosAdapter listaAlunosAdapter = new ListaAlunosAdapter(getApplicationContext(),users,onClickList());
+        ListaAlunosAdapter listaAlunosAdapter = new ListaAlunosAdapter(getApplicationContext(),users,aplicacoes,onClickList());
         recyclerView.setAdapter(listaAlunosAdapter);
     }
 

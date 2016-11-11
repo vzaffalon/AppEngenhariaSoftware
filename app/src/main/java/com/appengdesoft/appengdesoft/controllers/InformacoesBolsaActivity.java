@@ -104,20 +104,24 @@ public class InformacoesBolsaActivity extends AppCompatActivity{
         if(vaga.getTipo().equals("pibic")){
             tv_descricao.setText("Descrição: "+ vaga.getPibic().getAssunto());
             tv_valor.setText("Bolsa: " + vaga.getPibic().getValor_da_bolsa());
-            tv_professor.setText("Professor: " + "Jose Roberto");
+            tv_professor.setText("Professor: " + vaga.getNome());
             tv_departamento.setText("Departamento " +vaga.getCursos());
         }
         if(vaga.getTipo().equals("tcc")){
             tv_descricao.setText("Descrição: "+ vaga.getTcc().getAssunto());
             tv_valor.setVisibility(View.GONE);
-            tv_professor.setText("Orientador: " + "Assis Pereira");
+            tv_professor.setText("Orientador: " + vaga.getNome());
             tv_departamento.setText("Departamento " +vaga.getCursos());
+            tv_semestre.setVisibility(View.VISIBLE);
+            tv_semestre.setText("Data de criação da vaga: 22/11/2016");
         }
         if(vaga.getTipo().equals("estagio")){
             tv_descricao.setText("Descrição: "+ vaga.getEstagio().getDescricao());
             tv_valor.setText("Bolsa: " + vaga.getEstagio().getValor_da_bolsa());
-            tv_professor.setText("Orientador: " + "Isabella Faraco");
+            tv_professor.setText("Orientador: " + vaga.getNome());
             tv_departamento.setText("Vaga Estágio");
+            tv_semestre.setVisibility(View.VISIBLE);
+            tv_semestre.setText("Data de criação da vaga: 22/11/2016");
         }
     }
 }

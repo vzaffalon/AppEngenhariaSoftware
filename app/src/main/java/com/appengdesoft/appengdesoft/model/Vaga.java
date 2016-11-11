@@ -20,9 +20,37 @@ public class Vaga extends RealmObject {
     private Estagio estagio;
     private RealmList<User> users;
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    private String nome;
+
+    public RealmList<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(RealmList<User> users) {
+        this.users = users;
+    }
+
+    public RealmList<Aplicacao> getAplicacaos() {
+        return aplicacaos;
+    }
+
+    public void setAplicacaos(RealmList<Aplicacao> aplicacaos) {
+        this.aplicacaos = aplicacaos;
+    }
+
+    private RealmList<Aplicacao> aplicacaos;
+
 
     public Vaga(String data, String area, String cursos, String requisitos,
-                String tipo,Tcc tcc,Pibic pibic,Estagio estagio) {
+                String tipo,Tcc tcc,Pibic pibic,Estagio estagio,String nome) {
         this.data = data;
         this.area = area;
         this.cursos = cursos;
@@ -31,6 +59,7 @@ public class Vaga extends RealmObject {
         this.tcc = tcc;
         this.pibic = pibic;
         this.estagio = estagio;
+        this.nome = nome;
     }
 
     public Vaga(){

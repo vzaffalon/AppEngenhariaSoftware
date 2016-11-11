@@ -114,18 +114,18 @@ public class AdicionarVagaActivity extends AppCompatActivity {
                 //         String tipo,Tcc tcc, Pibic pibic, Estagio estagio
                 if(id==1){
                     Tcc tcc = new Tcc(descricao);
-                    Vaga vaga = new Vaga("22/11/2016",titulo,curso,requisitos,"tcc",tcc,null,null);
+                    Vaga vaga = new Vaga("22/11/2016",titulo,curso,requisitos,"tcc",tcc,null,null,user.getNome());
                     user.getProfessor().getVagas().add(vaga);
                 }else{
                     Pibic pibic = new Pibic(salario,descricao);
-                    Vaga vaga = new Vaga("22/11/2016",titulo,curso,requisitos,"pibic",null,pibic,null);
+                    Vaga vaga = new Vaga("22/11/2016",titulo,curso,requisitos,"pibic",null,pibic,null,user.getNome());
                     user.getProfessor().getVagas().add(vaga);
                 }
             }
             if(user.getTipo().equals("Gerente")){
                 Estagio estagio = new Estagio(salario,descricao);
                 Vaga vaga = new Vaga("22/11/2016",descricao,curso,
-                        requisitos,"estagio",null,null,estagio);
+                        requisitos,"estagio",null,null,estagio,user.getNome());
                 user.getGerente().getVagas().add(vaga);
             }
 

@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.appengdesoft.appengdesoft.R;
+import com.appengdesoft.appengdesoft.model.Aplicacao;
 import com.appengdesoft.appengdesoft.model.User;
 import com.appengdesoft.appengdesoft.model.Vaga;
 import com.rengwuxian.materialedittext.MaterialEditText;
@@ -99,9 +100,12 @@ public class AplicarParaVagaActivity extends AppCompatActivity {
                     .equalTo("area",area)
                     .findAll();
             RealmList<User> users_vaga = bolsa.get(0).getUser();
+            RealmList<Aplicacao> users_aplicacao = bolsa.get(0).getAplicacaos();
             RealmResults<User> users_list = realm.where(User.class)
                     .equalTo("email",getUserEmail())
                     .findAll();
+            Aplicacao aplicacao = new Aplicacao(nome,curso,semestre,habilidade,contato,bolsa.get(0).getTipo());
+            users_aplicacao.add(aplicacao);
             users_vaga.add(users_list.get(0));
             realm.commitTransaction();
             realm.close();
