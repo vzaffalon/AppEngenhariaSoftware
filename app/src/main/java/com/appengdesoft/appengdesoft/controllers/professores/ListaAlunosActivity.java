@@ -32,6 +32,7 @@ public class ListaAlunosActivity extends AppCompatActivity{
     private ArrayList<Aplicacao> aplicacoes;
     private RecyclerView recyclerView;
     int idx;
+    private User user;
 
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -56,7 +57,7 @@ public class ListaAlunosActivity extends AppCompatActivity{
         RealmResults<User> users_realm = realm.where(User.class)
                 .equalTo("email",getUserEmail())
                 .findAll();
-        User user = users_realm.get(0);
+        user = users_realm.get(0);
         try {
             if(user.getTipo().equals("Professor")) {
                 users.addAll(user.getProfessor().getVagas().get(idx).getUser().subList(0, user.getProfessor().getVagas().get(idx).getUser().size()));
@@ -82,7 +83,13 @@ public class ListaAlunosActivity extends AppCompatActivity{
         return new ListaAlunosAdapter.ListOnClickListener(){
             @Override
             public void onClickList(View view, int idx) {
-                Toast.makeText(getApplicationContext(),"Mostrar Lista de Alunos que Aplicaram",Toast.LENGTH_SHORT).show();
+                if(user.getTipo().equals("Professor")) {
+                    Intent intent = new Intent(getApplicationContext(), InformacoesAlunoProfessorActivity.class);
+                    startActivity(intent);
+                }else {
+                    Intent intent = new Intent(getApplicationContext(), com.appengdesoft.appengdesoft.controllers.professores.InformacoesAlunoGerenteActivity.class);
+                    startActivity(intent);
+                }
             }
         };
     }
