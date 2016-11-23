@@ -38,7 +38,7 @@
         <TextView
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Candidato: Victor dos Anjos"
+            android:text="Candidato: Bruno José Bergamaschi"
             android:textSize="17sp"
             android:textColor="@color/black"/>
 
@@ -67,7 +67,7 @@
         <TextView
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="Contato: anjosv@gmail.com"
+            android:text="Contato: brunoo@gmail.com"
             android:textSize="17sp"
             android:textColor="@color/black"/>
 

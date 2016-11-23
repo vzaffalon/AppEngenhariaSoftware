@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.appengdesoft.appengdesoft.R;
 
@@ -62,15 +63,15 @@ public class InformacoesAlunoProfessorActivity extends AppCompatActivity{
 
         aceitarAluno.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),ListaAlunosActivity.class);
-                startActivity(intent);
+                Toast.makeText(getApplicationContext(),"Opção Confirmada",Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
 
         negarAluno.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),ListaAlunosActivity.class);
-                startActivity(intent);
+                Toast.makeText(getApplicationContext(),"Opção Confirmada",Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
 

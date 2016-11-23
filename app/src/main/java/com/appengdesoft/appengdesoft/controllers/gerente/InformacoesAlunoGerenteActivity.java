@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.appengdesoft.appengdesoft.R;
 import com.appengdesoft.appengdesoft.controllers.gerente.ListaVagasRHActivity;
@@ -63,15 +64,15 @@ public class InformacoesAlunoGerenteActivity extends AppCompatActivity{
 
         aceitarCandidato.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),ListaVagasRHActivity.class);
-                startActivity(intent);
+                Toast.makeText(getApplicationContext(),"Opção Confirmada",Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
 
         negarCandidato.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),ListaVagasRHActivity.class);
-                startActivity(intent);
+                Toast.makeText(getApplicationContext(),"Opção Confirmada",Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
 
