@@ -45,6 +45,8 @@ public class ListaVagasProfessorActivity extends AppCompatActivity{
     @Override
     public void onResume(){
         super.onResume();
+        vagas = new ArrayList<>();
+        setUpRecyclerView();
     }
 
     //metodo que configura a RecyclerView
