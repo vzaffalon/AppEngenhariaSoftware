@@ -29,7 +29,7 @@
                 android:orientation="horizontal">
         <TextView
             android:id="@+id/tv_departamento"
-            android:layout_width="wrap_content"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:text="Ciencia da computação"
             android:textSize="18sp"
@@ -52,7 +52,7 @@
 
             <TextView
                 android:id="@+id/tv_titulo"
-                android:layout_width="wrap_content"
+                android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:text="Redes Neurais Artificiais"
                 android:textSize="15sp"
