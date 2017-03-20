@@ -1,19 +1,19 @@
 # AppEngenhariaSoftware
-Aplicativo Desenvolvida para aula de engenharia de software
+Application Developed for Software Engineering Course
 
-logar como aluno:
+Login as student:
 aluno@gmail.com
 123456
 
-logar como professor:
+Login as professor:
 professor@gmail.com
 123456
 
-logar como gerente:
+Login as manager:
 gerente@gmail.com
 123456
 
-Telas Exemplo:
+Some App Prints:
 
 ![alt tag](https://github.com/vzaffalon/AppEngenhariaSoftware/blob/master/image1.jpeg)
 ![alt tag](https://github.com/vzaffalon/AppEngenhariaSoftware/blob/master/image3.jpeg)
